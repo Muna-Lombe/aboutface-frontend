@@ -14,8 +14,22 @@
   </swiper>
 </view>
 
+<view class="main-container">
+  <image class="flower" src="../../images/blueflower.png"></image>
+  <view class="search_bar-container">
+    <search_bar></search_bar>
+  </view>
 
+  <view class="card-container">
+    <product_card></product_card>
+    <product_card></product_card>
+    <product_card></product_card>
+    <product_card></product_card>
+  </view>
+</view>
 
+<view class="diagonal-box">
+</view>
 
 
 

@@ -1,0 +1,10 @@
+<!--components/search_bar/search_bar.wxml-->
+<view class='page_row' bindtap="suo">
+    <view class="search">
+      <view class="df search_arr">
+        <icon class="searchicon" size='20' type='search'></icon>
+                 <input class="" placeholder="Search for a product" value="{{searchValue}}"/>
+      </view>
+    </view>
+         <view class='search-btn'>Search</view>
+  </view>
