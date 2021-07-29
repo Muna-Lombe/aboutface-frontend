@@ -12,14 +12,44 @@
     "pages/updateRecordSuccess/index",
     "pages/sumRecord/index",
     "pages/sumRecordResult/index",
-    "pages/"
+    "pages/product_index/product_index",
+    "pages/product_show/product_show",
+    "pages/routine_index/routine_index",
+    "pages/routine_show/routine_show",
+    "pages/product_compare/product_compare"
   ],
+  "usingComponents": {
+    "product_card": "components/product_card/product_card",
+    "routine": "components/routine/routine",
+    "routine_product": "components/routine_product/routine_product",
+    "cancel-btn": "components/cancel-btn/cancel-btn",
+    "confirm-btn": "components/confirm-btn/confirm-btn",
+    "compare_product": "components/compare_product/compare_product"
+  },
   "window": {
-    "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#F6F6F6",
-    "navigationBarTitleText": "云开发 QuickStart",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "custom"
+  },
+  "tabBar": {
+    "selectedColor":"#0F1F82",
+    "list": [{
+      "pagePath": "pages/product_index/product_index",
+      "text": "Home",
+      "iconPath": "images/homeicon.png",
+      "selectedIconPath": "images/homeicon.png"
+    }, {
+      "pagePath": "pages/product_compare/product_compare",
+      "text": "Compare",
+      "iconPath": "images/compareicon.png",
+      "selectedIconPath": "images/compareicon.png"
+    }, {
+      "pagePath": "pages/routine_index/routine_index",
+      "text": "Profile",
+      "iconPath": "images/usericon.png",
+      "selectedIconPath": "images/usericon.png"
+    }]
   },
   "sitemapLocation": "sitemap.json",
   "style": "v2"
