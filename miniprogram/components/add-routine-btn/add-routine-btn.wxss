@@ -1,0 +1,17 @@
+/* components/add-routine-btn/add-routine-btn.wxss */
+
+.btn {
+  background-color: #444444;
+  width: 310rpx;
+  height: 70rpx;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 20px;
+  border-radius: 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #E8D477;
+}
