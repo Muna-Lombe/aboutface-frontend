@@ -3,7 +3,7 @@
   <view class="navbar">About Face
   </view>
 
- 
+  <view class="center">
   <view class="banner-box">
   <swiper class="home-banner swiper" indicator-dots="true" autoplay="true" indicator-color="rgba(255,255,255,0.4)" indicator-active-color="rgba(255,255,255,1)" circular='true' interval="5000" duration="2000">
     <block wx:key="unique" wx:for="{{slider}}" wx:for-index="index">
@@ -12,6 +12,7 @@
       </swiper-item>
     </block>
   </swiper>
+</view>
 </view>
 
 <view class="main-container">

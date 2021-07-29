@@ -1,2 +1,39 @@
 <!--pages/product_show/product_show.wxml-->
-<text>pages/product_show/product_show.wxml</text>
+<body>
+  <view class="navbar">
+    <view class="flex-nav">
+      <navigator open-type="navigateBack">
+        <view><image class="arrow" src="../../images/arrowicon.png"></image></view>
+      </navigator>
+      <view>About Face</view>
+    </view>
+  </view>
+
+  <view class="show-container">
+    <view class="show-box">
+      <view class="brand-name">COSRX</view>
+      <view class="img-card">
+        <image class="img" src="../../images/testproduct.png"></image>
+      </view>
+      <view class="product-name">Advanced Snail Mucin Gel Cleanser</view>
+    </view>
+
+    <view class="ingredients-container">
+      <view class="info-container">
+        <view class="h2">Ingredients:</view>
+        <view class="ingredients">Water, Acrylates Copolymer, Butylene Glycol, Glycerin, Disodium Laureth Sulfosuccinate, Sodium Cocoyl Isethionate, 1,2-Hexanediol, Coco-Glucoside, Lauryl Betaine, Snail Secretion Filtrate, Arginine, Tromethamine, Potassium Cocoyl Glycinate, Fragrance, Carbomer, Sodium Chloride, Ethylhexylglycerin, Acrylates/C10-30 Alkyl Acrylate Crosspolymer, Sodium Polyacrylate, Disodium EDTA.</view>
+      </view>
+    </view>
+
+    <view class="btns-container">
+      <view class="btns">
+        <compare-btn></compare-btn>
+        <add-routine-btn></add-routine-btn>
+      </view>
+    </view>
+  
+  </view>
+
+
+
+</body>
