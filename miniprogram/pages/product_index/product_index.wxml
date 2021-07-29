@@ -1,0 +1,23 @@
+<!--pages/product_index/product_index.wxml-->
+<body>
+  <view class="navbar">About Face
+  </view>
+
+ 
+  <view class="banner-box">
+  <swiper class="home-banner swiper" indicator-dots="true" autoplay="true" indicator-color="rgba(255,255,255,0.4)" indicator-active-color="rgba(255,255,255,1)" circular='true' interval="5000" duration="2000">
+    <block wx:key="unique" wx:for="{{slider}}" wx:for-index="index">
+      <swiper-item>
+        <image class="banner-img" src="{{item.img}}" bindtap='clickBanner' data-id="{{item}}" data-banner="{{item}}" data-index="{{index}}" class="slide-image" mode="aspectFill" />
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+
+
+
+
+
+
+
+</body>
