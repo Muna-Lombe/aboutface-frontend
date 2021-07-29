@@ -1,2 +1,12 @@
 <!--components/product_card/product_card.wxml-->
-<text>components/product_card/product_card.wxml</text>
+<view class="max-width">
+  <view class="product_card">
+    <view class="img-card">
+      <image class="img" src="../../images/testproduct.png"></image>
+    </view>
+    <view class="product-info">
+      <view class="brand-name">COSRX</view>
+      <view class="product-name">Advanced Snail Mucin Gel Cleanser</view>
+    </view>
+  </view>
+</view>

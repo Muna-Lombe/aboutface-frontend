@@ -24,7 +24,8 @@
     "routine_product": "components/routine_product/routine_product",
     "cancel-btn": "components/cancel-btn/cancel-btn",
     "confirm-btn": "components/confirm-btn/confirm-btn",
-    "compare_product": "components/compare_product/compare_product"
+    "compare_product": "components/compare_product/compare_product",
+    "search_bar": "components/search_bar/search_bar"
   },
   "window": {
     "backgroundTextStyle": "light",
