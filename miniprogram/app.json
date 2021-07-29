@@ -24,7 +24,11 @@
     "routine_product": "components/routine_product/routine_product",
     "cancel-btn": "components/cancel-btn/cancel-btn",
     "confirm-btn": "components/confirm-btn/confirm-btn",
-    "compare_product": "components/compare_product/compare_product"
+    "compare_product": "components/compare_product/compare_product",
+    "search_bar": "components/search_bar/search_bar",
+    "compare-btn": "components/compare-btn/compare-btn",
+    "add-routine-btn": "components/add-routine-btn/add-routine-btn",
+    "banner": "components/banner/banner"
   },
   "window": {
     "backgroundTextStyle": "light",

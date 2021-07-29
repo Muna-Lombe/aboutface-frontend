@@ -1,0 +1,14 @@
+/* components/banner/banner.wxss */
+
+.card-category {
+  height: 800rpx;
+  width: 400rpx;
+  background-size: cover;
+  background-position: center;
+  border-radius: 20rpx;
+}
+
+.h1 {
+  color: #EDDD98;
+  
+}

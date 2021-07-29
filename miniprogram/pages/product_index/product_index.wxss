@@ -1,18 +1,60 @@
 /* pages/product_index/product_index.wxss */
 
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  height: 100%;
+  position: relative;
+  margin-bottom: 80rpx;
+}
+
+.flower {
+  position: fixed;
+  height: 80%;
+  z-index: -5;
+  left: 0;
+  opacity: .4;
+}
+
+.search_bar-container {
+  margin-top: 40rpx;
+  width: 90%;
+}
+
+.card-container {
+  width: 90%;
+  height: 800rpx;
+  margin-top: 40rpx;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-row-gap: 20rpx;
+  justify-content: space-between;
+}
+
+.center {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
 
 .banner-box {
-  background-color: #fff;
-  height: 400rpx;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 650rpx;
   overflow: hidden;
 }
  
 .home-banner {
   width: 100%;
-  height: 400rpx;
+  height: 650rpx;
 }
  
 .home-banner image {
   width: 100%;
   height: 100%;
+  border-radius: 20rpx;
 }
