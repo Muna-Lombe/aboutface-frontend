@@ -1,2 +1,14 @@
 <!--components/routine/routine.wxml-->
-<text>components/routine/routine.wxml</text>
+
+<view class="routine">
+
+  <view class="center">
+  <view class="icon-name">
+    <image class="routine-icon" src="../../images/routineicon.png"></image>
+    <view class="routine-name">Morning Routine</view>
+  </view>
+  <image class="arrow-icon" src="../../images/routinearrow.png"></image>
+  
+  </view>
+
+</view>

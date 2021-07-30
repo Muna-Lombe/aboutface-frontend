@@ -1,0 +1,13 @@
+<!--components/add-new-routine/add-new-routine.wxml-->
+<view class="routine">
+
+<view class="center">
+<view class="icon-name">
+  <image class="routine-icon" src="../../images/routineiconblue.png"></image>
+  <view class="add-title">Add a new routine</view>
+</view>
+<image class="add-icon" src="../../images/routineaddicon.png"></image>
+
+</view>
+
+</view>

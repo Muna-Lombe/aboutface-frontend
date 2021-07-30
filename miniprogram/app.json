@@ -28,6 +28,7 @@
     "search_bar": "components/search_bar/search_bar",
     "compare-btn": "components/compare-btn/compare-btn",
     "add-routine-btn": "components/add-routine-btn/add-routine-btn",
+    "add-new-routine": "components/add-new-routine/add-new-routine",
     "banner": "components/banner/banner"
   },
   "window": {
