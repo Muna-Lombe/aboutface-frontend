@@ -1,2 +1,21 @@
 <!--components/routine_product/routine_product.wxml-->
-<text>components/routine_product/routine_product.wxml</text>
+
+<view class="product-box">
+  <view class="product-info">
+    <view class="img-name">
+      <view class="product-box-img">
+        <image class="img" src="../../images/testproduct.png"></image>
+      </view>
+      <view class="name-brand">
+        <view class="product-name">Advanced Snail Mucin Gel Cleanser</view>
+        <view class="product-brand">COSRX</view>
+      </view>
+    </view>
+
+    <view class="delete-box">
+      <view class="delete-icon"></view>
+    </view>
+
+  </view>
+
+</view>

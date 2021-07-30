@@ -1,1 +1,97 @@
 /* pages/routine_show/routine_show.wxss */
+
+.navbar {
+  background-color: #f6f6f6;
+}
+
+.flex-nav {
+  display: flex;
+}
+
+.arrow {
+  width: 50rpx;
+  height: 50rpx;
+  margin: 10rpx;
+  position: absolute;
+  top: 95rpx;
+  left: 30rpx;
+}
+
+/* header */
+
+.routine-name {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  font-size: 70rpx;
+  color: #444444;
+  font-weight: bold;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+}
+
+.edit-delete {
+  padding: 50rpx 0rpx;
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  border-bottom: 1px solid #EEB4B8;
+}
+
+.edit {
+  height: 40rpx;
+  display: flex;
+  align-items: center;
+}
+
+.delete {
+  height: 40rpx;
+  display: flex;
+  align-items: center;
+}
+
+.edit-icon {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 7rpx;
+}
+
+.delete-icon {
+  width: 37rpx;
+  height: 40rpx;
+  margin-right: 7rpx;
+}
+
+/* products */
+
+.product-container {
+  padding: 40rpx 20rpx;
+  margin-bottom: 175rpx;
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+}
+
+/* add icon */
+
+.add-product {
+  position: fixed;
+  bottom: 60rpx;
+  right: 40rpx;
+  height: 120rpx;
+  width: 120rpx;
+  border-radius: 50%;
+  background-color: #444444;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-icon {
+  width: 55rpx;
+  height: 55rpx;
+}

@@ -1,2 +1,36 @@
 <!--pages/routine_show/routine_show.wxml-->
-<text>pages/routine_show/routine_show.wxml</text>
+<body>
+  <view class="navbar">
+    <view class="flex-nav">
+      <navigator open-type="navigateBack">
+        <image class="arrow" src="../../images/arrowbackicon.png"></image>
+      </navigator>
+    </view>
+  </view>
+
+    <view class="routine-name">Morning Routine</view>
+
+  <view class="center">
+    <view class="edit-delete">
+      <view class="edit"><image class="edit-icon" src="../../images/editicon.png"></image>Edit</view>
+      <view class="delete"><image class="delete-icon" src="../../images/deleteicon.png"></image>Delete</view>
+    </view>
+  </view>
+
+  <view class="product-container">
+    
+    <routine_product></routine_product>
+    <routine_product></routine_product>
+    <routine_product></routine_product>
+    <routine_product></routine_product>
+    <routine_product></routine_product>
+    <routine_product></routine_product>
+    <routine_product></routine_product>
+
+  </view>
+
+  <navigator class="add-product">
+    <image class="add-icon" src="../../images/addiconpink.png"></image>
+  </navigator>
+
+  </body>
