@@ -22,7 +22,10 @@
   </view>
 
   <view class="card-container">
-    <product_card></product_card>
+    <navigator url = "../product_show/product_show">
+      <product_card></product_card>
+    </navigator>
+    <!-- <product_card bindtap="goToShow"></product_card> -->
     <product_card></product_card>
     <product_card></product_card>
     <product_card></product_card>

@@ -26,6 +26,12 @@ Page({
       }) 
     }
   },
+
+  goToShow: function(){
+    wx.navigateTo({
+      url: '../miniprogram/pages/product_show/product_show',
+    })
+  },
   /**
    * Lifecycle function--Called when page load
    */
