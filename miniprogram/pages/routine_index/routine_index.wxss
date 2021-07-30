@@ -1,1 +1,46 @@
 /* pages/routine_index/routine_index.wxss */
+
+.profile-background {
+  width: 100%;
+  height: 300rpx;  
+  background-color: #FFE3E5;
+  position: relative;
+}
+
+.swish {
+  width: 100%;
+  height: 300rpx;
+}
+
+.profile-img {
+  position: absolute;
+  left: 276rpx; 
+  top: 198rpx;
+  height: 200rpx;
+  width: 200rpx;
+  border-radius: 50%;
+  background-size: cover;
+}
+
+.dashed-border {
+  position: absolute; 
+  left: 267rpx; 
+  top: 191rpx;
+  width: 210rpx;
+  height: 210rpx;
+  border-radius: 50%;
+  border: 4rpx dashed #0F1F82;
+  opacity: .2;
+}
+
+.user-name {
+  color: #444444;
+  font-size: 35rpx;
+  display: flex;
+  justify-content: center;
+  margin-top: 120rpx;
+}
+
+.routine-container {
+  margin-top: 50rpx;
+}

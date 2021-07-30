@@ -1,2 +1,23 @@
 <!--pages/routine_index/routine_index.wxml-->
-<text>pages/routine_index/routine_index.wxml</text>
+<body>
+
+  <view class="navbar">About Face
+  </view>
+
+  <view class="profile-background">
+    <image class="swish" src="../../images/swish.png"></image>
+    <image class="profile-img" mode="aspectFill" src="https://images.pexels.com/photos/8159669/pexels-photo-8159669.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"></image>
+    <view class="dashed-border"></view>
+  </view>
+
+  <view class="user-name">Mike Rotch</view>
+
+  <view class="routine-container">
+    <routine></routine>
+    <routine></routine>
+    <add-new-routine></add-new-routine>
+  </view>
+
+  
+
+</body>
