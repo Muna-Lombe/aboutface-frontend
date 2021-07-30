@@ -1,2 +1,8 @@
 <!--components/compare_product/compare_product.wxml-->
-<text>components/compare_product/compare_product.wxml</text>
+<view class="compare-box-1">
+  <view class="product-box-img">
+    <image class="plus-icon" src="../../images/compareplusicon.png"></image>
+    <view class="add-text">Add a product</view>
+  </view>
+
+</view>

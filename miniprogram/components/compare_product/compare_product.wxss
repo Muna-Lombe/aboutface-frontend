@@ -1,1 +1,34 @@
 /* components/compare_product/compare_product.wxss */
+
+.compare-box-1 {
+  width: 344rpx;
+  height: 800rpx;
+  background: #FBFBFB;
+  border: 3px dashed #E7E7E7;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.product-box-img {
+  width: 290rpx;
+  height: 290rpx;
+  background: #FBFBFB;
+  border: 3px dashed #E7E7E7;
+  box-sizing: border-box;
+  margin-top: 20rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.plus-icon {
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.add-text {
+  color: #d8d8d8;
+}

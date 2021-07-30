@@ -1,2 +1,18 @@
 <!--pages/product_compare/product_compare.wxml-->
-<text>pages/product_compare/product_compare.wxml</text>
+<body>
+  <view class="navbar">About Face
+  </view>
+  
+  <view class="compare-container">
+
+    <view class="top-text">Compare the ingredients of two products:</view>
+
+    <view class="compare-box-container">
+      <compare_product></compare_product> 
+      <compare_product></compare_product>
+    </view>
+
+  </view>
+
+
+</body>

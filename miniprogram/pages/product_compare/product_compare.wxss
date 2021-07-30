@@ -1,1 +1,18 @@
 /* pages/product_compare/product_compare.wxss */
+
+.compare-container {
+  margin: 25rpx;
+}
+
+.top-text {
+  width: 100%;
+  text-align: center;
+}
+
+.compare-box-container {
+  margin-top: 30rpx;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
