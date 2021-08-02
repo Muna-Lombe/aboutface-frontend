@@ -11,6 +11,16 @@ Page({
   /**
    * Lifecycle function--Called when page load
    */
+  onCompare:function(){
+    wx.switchTab({
+      url: '../product_compare/product_compare',
+    })
+  },
+  onAdd:function(){
+    wx.navigateTo({
+      url: '../routine_show/routine_show',
+    })
+  },
   onLoad: function (options) {
 
   },

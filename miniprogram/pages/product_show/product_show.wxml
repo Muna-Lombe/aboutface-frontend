@@ -27,8 +27,8 @@
 
     <view class="btns-container">
       <view class="btns">
-        <compare-btn></compare-btn>
-        <add-routine-btn></add-routine-btn>
+        <compare-btn bindtap = "onCompare"></compare-btn>
+        <add-routine-btn bindtap = "onAdd"></add-routine-btn>
       </view>
     </view>
   
