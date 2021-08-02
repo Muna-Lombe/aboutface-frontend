@@ -3,8 +3,9 @@
     <view class="search">
       <view class="df search_arr">
         <icon class="searchicon" size='20' type='search'></icon>
+        <!-- <button class="clear" bindtap="clearSearch" disabled="{{isDisabled}}" >x</button> -->
         <input name="input" placeholder="Search for a product" value="{{searchValue}}"/>
       </view>
     </view>
-    <button class='search-btn' form-type = "submit">Search</button>
+    <button class='search-btn' form-type = "submit" >Search</button>
 </form>

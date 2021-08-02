@@ -18,9 +18,18 @@
 <view class="main-container" style="position: relative; left: 0rpx; top: -1rpx">
   <image class="flower" src="../../images/blueflower.png"></image>
   <view class="search_bar-container">
-    <search_bar bind:search="onSearch"></search_bar>
+
+  <form class='page_row' bindsubmit="onSearch">
+    <view class="search">
+      <view class="df search_arr">
+        <input name="input" placeholder="Search for a product" value="{{searchValue}}"/>
+        <view class="clear {{class}}" bindtap="clearSearch">x</view>
+      </view>
+      <button class='search-btn' form-type = "submit" ><icon class="searchicon" size='20' type='search'></icon></button>
+    </view>
+  </form>
+
   </view>
-  <button style="width: 324rpx; height: 64rpx; display: block; box-sizing: border-box; left: -162rpx; top: 1rpx; position: relative" bindtap="clearSearch" disabled="{{isDisabled}}">Clear Search</button>
   <view class="card-container">
     <product_card wx:for="{{products}}" wx:key="index" product="{{item}}" bindtap="goToShow"></product_card>
   </view>
