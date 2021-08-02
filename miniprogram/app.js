@@ -22,7 +22,9 @@ App({
             console.log("res",res)
             that.globalData.userInfo = res.data.user
             that.globalData.headers = res.data.headers
-
+            wx.switchTab({
+              url: '../product_index/product_index',
+            })
           }
         })
         // send the code to the backend
@@ -56,6 +58,7 @@ App({
     userInfo:"",
     headers:"",
     language: "EN",
-    rooms: []
+    products: ""
+    // wx.getStorageSync('products')
   }
 })

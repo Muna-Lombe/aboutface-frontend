@@ -31,7 +31,7 @@ Page({
     }
   },
 
-  goToShow: function(){
+  goToShow: function(e){
     wx.navigateTo({
       url: '../product_show/product_show',
     })
@@ -42,13 +42,14 @@ Page({
     const url = app.globalData.url
     const query = e.detail.value
     const headers = app.globalData.headers
+    const page = this
 
     wx.request({
       url: `${url}/api/v1/products?query=${query}`,
       header: headers,
       success(res){
         const products = res.data.products
-        console.log(res)
+        console.log(products)
         page.setData({
           products: products
         })
@@ -59,28 +60,46 @@ Page({
   },
   clearSearch:function(){
     // make an api to fetch all products done by muna
+      console.log(options.input)
+      const page = this
+      const url = app.globalData.url
+      const headers = app.globalData.headers
+      const query = options.input
+      wx.request({
+        url: `${url}/api/v1/products`,
+        header: headers,
+        success(res){
+          const products = res.data.products
+          console.log(res)
+          page.setData({
+            products: products
+          })
+        }
+      })
     this.setData({class: "hidden", searchValue: ""});
   },
   /**
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-    const page = this
-    const url = app.globalData.url
-    const headers = app.globalData.headers
-    wx.request({
-      url: `${url}/api/v1/products`,
-      header: headers,
-      success(res){
-        const products = res.data.products
-        console.log(res)
-        page.setData({
-          products: products,
-          isDisabled: true
-        })
-      }
-    })
-
+      const page = this
+      const url = app.globalData.url
+      const headers = app.globalData.headers
+      wx.showLoading({})
+      wx.request({
+        url: `${url}/api/v1/products`,
+        header: headers,
+        success(res){
+          wx.hideLoading({})
+          const products = res.data.products
+          console.log(res)
+        
+          page.setData({
+            products: products,
+            isDisabled: true
+          })
+        }
+      })
   },
 
   /**
@@ -95,24 +114,7 @@ Page({
    */
 
   onShow: function (options) {
-    if (options){
-      console.log(options.input)
-      const page = this
-      const url = app.globalData.url
-      const headers = app.globalData.headers
-      const query = options.input
-      // wx.request({
-      //   url: `${url}/api/v1/products?query=${query}`,
-      //   header: headers,
-      //   success(res){
-      //     const products = res.data.products
-      //     console.log(res)
-      //     page.setData({
-      //       products: products
-      //     })
-      //   }
-      // })
-    }
+  
   },
 
   /**

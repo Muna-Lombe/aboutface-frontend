@@ -22,7 +22,7 @@
   <form class='page_row' bindsubmit="onSearch">
     <view class="search">
       <view class="df search_arr">
-        <input name="input" placeholder="Search for a product" value="{{searchValue}}"/>
+        <input style="width: 492rpx; height: 60rpx; display: block; box-sizing: border-box; left: NaNrpx; top: NaNrpx"  name="input" placeholder="Search for a product" value="{{searchValue}}"/>
         <view class="clear {{class}}" bindtap="clearSearch">x</view>
       </view>
       <button class='search-btn' form-type = "submit" ><icon class="searchicon" size='20' type='search'></icon></button>

@@ -1,4 +1,5 @@
 // pages/splash_page/splash_page.js
+
 Page({
 
   /**
@@ -12,7 +13,13 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-
+    setTimeout(() => {
+        wx.showLoading({
+          title: 'Logging In',
+          mask: true
+        })
+    }, 3000);
+    
   },
 
   /**
