@@ -10,7 +10,9 @@ Page({
       {'img':'../../images/makearoutinebanner.png'},
       {'img':'../../images/compareproductsbanner.png'}
     ],
-    isDisabled: true
+    isDisabled: true,
+    class: "hidden",
+    searchValue: ""
   },
 
   clickBanner: function(e) {
@@ -37,13 +39,27 @@ Page({
   onSearch: function(e){
     console.log("search event res:", e)
     const searchInput = e.detail.value
-    this.onShow(searchInput)
-    this.setData({
-      isDisabled: false
+    const url = app.globalData.url
+    const query = e.detail.value
+    const headers = app.globalData.headers
+
+    wx.request({
+      url: `${url}/api/v1/products?query=${query}`,
+      header: headers,
+      success(res){
+        const products = res.data.products
+        console.log(res)
+        page.setData({
+          products: products
+        })
+        
+      }
     })
+      this.setData({class: ""});
   },
   clearSearch:function(){
-    this.onLoad()
+    // make an api to fetch all products done by muna
+    this.setData({class: "hidden", searchValue: ""});
   },
   /**
    * Lifecycle function--Called when page load
@@ -85,17 +101,17 @@ Page({
       const url = app.globalData.url
       const headers = app.globalData.headers
       const query = options.input
-      wx.request({
-        url: `${url}/api/v1/products?query=${query}`,
-        header: headers,
-        success(res){
-          const products = res.data.products
-          console.log(res)
-          page.setData({
-            products: products
-          })
-        }
-      })
+      // wx.request({
+      //   url: `${url}/api/v1/products?query=${query}`,
+      //   header: headers,
+      //   success(res){
+      //     const products = res.data.products
+      //     console.log(res)
+      //     page.setData({
+      //       products: products
+      //     })
+      //   }
+      // })
     }
   },
 
