@@ -5,7 +5,7 @@
   <view class="center">
   <view class="icon-name">
     <image class="routine-icon" src="../../images/routineicon.png"></image>
-    <view class="routine-name">Morning Routine</view>
+    <view class="routine-name">{{routine.name}}</view>
   </view>
   <image class="arrow-icon" src="../../images/routinearrow.png"></image>
   

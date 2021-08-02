@@ -13,29 +13,28 @@
   <view class="user-name">Mike Rotch</view>
 
   <view class="routine-container">
-    <routine></routine>
-    <routine></routine>
-
+    <routine wx:for="{{routines}}" wx:key="index" routine="{{item}}" bindtap="goToShow"></routine>
     <view class="button-padding">
           <view bindtap="openModal" disabled="{{default}}"><add-new-routine></add-new-routine></view>
         </view>
         <view class="button-container">
         <view wx-if='{{showModal}}' class='modal-mask' bindtap='hideModal' catchtouchmove='preventTouchMove'></view>
         <view wx-if='{{showModal}}' class='modal-dialog'>
-        <view class="modal-container">
+        <form class="modal-container" bindsubmit="setName">
           <view class="modal-text">Name of new routine:</view>
           <view class="search_arr">
-            <input class="search" placeholder="ex: nighttime routine" value="{{searchValue}}"/>
+            <input class="search" name = "input" bindinput="catchInput" placeholder="ex: nighttime routine" value="{{searchValue}}"/>
           </view>
           <view class="confirm-cancel">
             <view class="d-flex">
               <cancel-btn bindtap="hideModal"></cancel-btn>
               <view>
-                <confirm-btn></confirm-btn>
+              <!-- <confirm-btn bind:onTap = "setName"></confirm-btn> -->
+              <confirm-btn  bind:onTap = "addRoutine"></confirm-btn>
               </view>
             </view>
           </view>
-        </view>
+        </form>
         </view>
       </view>
 

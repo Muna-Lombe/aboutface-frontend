@@ -1,4 +1,7 @@
 // pages/routine_index/routine_index.js
+const app = getApp()
+const setUrl = app.globalData.url
+
 Page({
 
   /**
@@ -12,19 +15,64 @@ Page({
     this.setData({
       showModal: true,
     })
-    
   },
 
-    hideModal: function() {
-      this.setData({
-        showModal: false,
-      })
-    },  
+  hideModal: function() {
+    this.setData({
+      showModal: false,
+    })
+  },  
 
   /**
    * Lifecycle function--Called when page load
    */
+  catchInput:function(e){
+    // console.log(e.detail.value)
+    this.setData({
+      toGet: e.detail.value
+    })
+  },
+  addRoutine:function(e){
+    const headers = app.globalData.headers
+    // console.log(this.data.toGet)
+    const name = this.data.toGet
+    const page = this
+    // "name": "mid-year routine"
+    wx.request({
+      url:`${setUrl}/api/v1/routines`,
+      header: headers,
+      method: 'POST',
+      data: {"name": name},
+      success(res){
+        // console.log(res),
+        page.setData({
+          showModal: false
+        })
+        page.onLoad()
+      }
+    })
+  },
+  
+  goToShow: function(){
+    wx.navigateTo({
+      url: '../routine_show/routine_show',
+    })
+  },
   onLoad: function (options) {
+    const page = this
+    const headers = app.globalData.headers
+    // console.log("headers:",headers)
+    wx.request({
+      url: `${setUrl}/api/v1/routines`,
+      header: headers,
+      success(res){
+        const routines = res.data.routines
+        // console.log(res)
+        page.setData({
+          routines: routines
+        })
+      }
+    })
 
   },
 
@@ -39,7 +87,7 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow: function () {
-
+    
   },
 
   /**
