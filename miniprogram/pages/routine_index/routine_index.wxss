@@ -50,7 +50,6 @@
 .modal-dialog {
   width: 540rpx;
   height: 200rpx;
-  position: absolute;
   overflow: hidden;
   z-index: 5;
   background: #f9f9f9;
@@ -59,9 +58,10 @@
   position: absolute;
   margin-left: auto;
   margin-right: auto;
-  top: 50%;
+  top: 50vh;
   left: 0;
   right: 0;
+  vertical-align: middle;
 }
 
 .modal-mask {
