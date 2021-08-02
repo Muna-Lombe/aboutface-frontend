@@ -1,0 +1,10 @@
+<!--pages/splash_page/splash_page.wxml-->
+<body>
+<view class="splash-container">
+  <image class="img" src="../../images/designfront.png"></image>
+  <image class="logo" src="../../images/aboutfacelogo.png"></image>
+
+
+</view>
+
+</body>

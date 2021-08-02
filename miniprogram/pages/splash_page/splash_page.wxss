@@ -1,0 +1,25 @@
+/* pages/splash_page/splash_page.wxss */
+
+.splash-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.img {
+  width: 532rpx;
+  height: 800rpx;
+}
+
+.logo {
+  width: 260rpx;
+  height: 166rpx;
+}
+
+.slogan {
+  margin-top: 20rpx;
+  text-align: center;
+}
