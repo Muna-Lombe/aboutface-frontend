@@ -1,4 +1,5 @@
 // pages/product_index/product_index.js
+const app = getApp()
 Page({
 
   /**
@@ -8,7 +9,8 @@ Page({
     slider:[ 
       {'img':'../../images/makearoutinebanner.png'},
       {'img':'../../images/compareproductsbanner.png'}
-    ]
+    ],
+    isDisabled: true
   },
 
   clickBanner: function(e) {
@@ -29,13 +31,39 @@ Page({
 
   goToShow: function(){
     wx.navigateTo({
-      url: '../miniprogram/pages/product_show/product_show',
+      url: '../product_show/product_show',
     })
+  },
+  onSearch: function(e){
+    console.log("search event res:", e)
+    const searchInput = e.detail.value
+    this.onShow(searchInput)
+    this.setData({
+      isDisabled: false
+    })
+  },
+  clearSearch:function(){
+    this.onLoad()
   },
   /**
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
+    const page = this
+    const url = app.globalData.url
+    const headers = app.globalData.headers
+    wx.request({
+      url: `${url}/api/v1/products`,
+      header: headers,
+      success(res){
+        const products = res.data.products
+        console.log(res)
+        page.setData({
+          products: products,
+          isDisabled: true
+        })
+      }
+    })
 
   },
 
@@ -49,8 +77,26 @@ Page({
   /**
    * Lifecycle function--Called when page show
    */
-  onShow: function () {
 
+  onShow: function (options) {
+    if (options){
+      console.log(options.input)
+      const page = this
+      const url = app.globalData.url
+      const headers = app.globalData.headers
+      const query = options.input
+      wx.request({
+        url: `${url}/api/v1/products?query=${query}`,
+        header: headers,
+        success(res){
+          const products = res.data.products
+          console.log(res)
+          page.setData({
+            products: products
+          })
+        }
+      })
+    }
   },
 
   /**

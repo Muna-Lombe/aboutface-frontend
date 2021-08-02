@@ -5,8 +5,8 @@
       <image class="img" src="../../images/testproduct.png"></image>
     </view>
     <view class="product-info">
-      <view class="brand-name">COSRX</view>
-      <view class="product-name">Advanced Snail Mucin Gel Cleanser</view>
+      <view class="brand-name">{{product.brand}}</view>
+      <view class="product-name">{{product.name}}</view>
     </view>
   </view>
 </view>
