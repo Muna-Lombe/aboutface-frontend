@@ -15,21 +15,17 @@
 </view>
 </view>
 
-<view class="main-container">
+<view class="main-container" style="position: relative; left: 0rpx; top: -1rpx">
   <image class="flower" src="../../images/blueflower.png"></image>
   <view class="search_bar-container">
-    <search_bar></search_bar>
+    <search_bar bind:search="onSearch"></search_bar>
+  </view>
+  <button style="width: 324rpx; height: 64rpx; display: block; box-sizing: border-box; left: -162rpx; top: 1rpx; position: relative" bindtap="clearSearch" disabled="{{isDisabled}}">Clear Search</button>
+  <view class="card-container">
+    <product_card wx:for="{{products}}" wx:key="index" product="{{item}}" bindtap="goToShow"></product_card>
   </view>
 
-  <view class="card-container">
-    <navigator url = "../product_show/product_show">
-      <product_card></product_card>
-    </navigator>
-    <!-- <product_card bindtap="goToShow"></product_card> -->
-    <product_card></product_card>
-    <product_card></product_card>
-    <product_card></product_card>
-  </view>
+  
 </view>
 
 <view class="diagonal-box">
