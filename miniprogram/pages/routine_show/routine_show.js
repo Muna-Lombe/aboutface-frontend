@@ -5,8 +5,30 @@ Page({
    * Page initial data
    */
   data: {
-
+    showModal: false,
+    seeModal: false,
   },
+
+  editModal: function() {
+    this.setData({
+      showModal: true,
+    })
+    
+  },
+
+  deleteModal: function() {
+    this.setData({
+      seeModal: true,
+    })
+    
+  },
+
+    hideModal: function() {
+      this.setData({
+        showModal: false,
+        seeModal: false,
+      })
+    },  
 
   /**
    * Lifecycle function--Called when page load
