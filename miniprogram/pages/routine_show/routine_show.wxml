@@ -12,8 +12,49 @@
 
   <view class="center">
     <view class="edit-delete">
-      <view class="edit"><image class="edit-icon" src="../../images/editicon.png"></image>Edit</view>
-      <view class="delete"><image class="delete-icon" src="../../images/deleteicon.png"></image>Delete</view>
+
+      <view class="button-padding">
+          <view bindtap="editModal" disabled="{{default}}">      <view class="edit"><image class="edit-icon" src="../../images/editicon.png"></image>Edit</view></view>
+        </view>
+        <view class="button-container">
+        <view wx-if='{{showModal}}' class='modal-mask' bindtap='hideModal' catchtouchmove='preventTouchMove'></view>
+        <view wx-if='{{showModal}}' class='modal-dialog'>
+        <view class="modal-container">
+          <view class="modal-text">Edit the name of the routine:</view>
+          <view class="search_arr">
+            <input class="search" placeholder="ex: nighttime routine" value="{{searchValue}}"/>
+          </view>
+          <view class="confirm-cancel">
+            <view class="d-flex">
+              <cancel-btn bindtap="hideModal"></cancel-btn>
+              <view>
+                <confirm-btn></confirm-btn>
+              </view>
+            </view>
+          </view>
+        </view>
+        </view>
+      </view>
+
+          <view bindtap="deleteModal" disabled="{{default}}"><view class="delete"><image class="delete-icon" src="../../images/deleteicon.png"></image>Delete</view></view>
+        </view>
+        <view class="button-container">
+        <view wx-if='{{seeModal}}' class='modal-mask' bindtap='hideModal' catchtouchmove='preventTouchMove'></view>
+        <view wx-if='{{seeModal}}' class='modal-dialog'>
+        <view class="modal-container">
+          <view class="modal-text">Are you sure you want to delete this routine?</view>
+          <view class="confirm-cancel">
+            <view class="d-flex">
+              <cancel-btn bindtap="hideModal"></cancel-btn>
+              <view>
+                <confirm-btn></confirm-btn>
+              </view>
+            </view>
+          </view>
+        </view>
+        </view>
+
+
     </view>
   </view>
 
