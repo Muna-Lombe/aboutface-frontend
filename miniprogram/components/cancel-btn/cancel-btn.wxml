@@ -1,2 +1,4 @@
 <!--components/cancel-btn/cancel-btn.wxml-->
-<text>components/cancel-btn/cancel-btn.wxml</text>
+<view class="no-btn">
+  <view>Cancel</view>
+</view>

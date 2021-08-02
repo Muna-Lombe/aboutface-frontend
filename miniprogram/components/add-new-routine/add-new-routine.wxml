@@ -6,6 +6,7 @@
   <image class="routine-icon" src="../../images/routineiconblue.png"></image>
   <view class="add-title">Add a new routine</view>
 </view>
+
 <image class="add-icon" src="../../images/routineaddicon.png"></image>
 
 </view>

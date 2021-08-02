@@ -1,1 +1,12 @@
 /* components/cancel-btn/cancel-btn.wxss */
+.no-btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 150rpx;
+  height: 70rpx;
+  border-radius: 5px;
+  background-color: rgb(236, 236, 236);
+  margin-right: 10rpx;
+}

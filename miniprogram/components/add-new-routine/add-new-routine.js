@@ -11,8 +11,8 @@ Component({
    * Component initial data
    */
   data: {
-
   },
+
 
   /**
    * Component methods

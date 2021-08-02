@@ -44,3 +44,68 @@
 .routine-container {
   margin-top: 50rpx;
 }
+
+/* modal */
+
+.modal-dialog {
+  width: 540rpx;
+  height: 200rpx;
+  position: absolute;
+  overflow: hidden;
+  z-index: 5;
+  background: #f9f9f9;
+  margin: 100rpx 0rpx 0rpx 100rpx;
+  padding: 30rpx;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  top: 50%;
+  left: 0;
+  right: 0;
+}
+
+.modal-mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0rpx;
+  left: 0rpx;
+  background: #000;
+  opacity: 0.3;
+  overflow: hidden;
+  z-index: 1;
+  color: #fff;
+}
+
+.modal-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.d-flex {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.confirm-cancel {
+  position: absolute;
+  bottom: 10rpx;
+  right: 10rpx;
+}
+
+.search {
+  margin-left: 10rpx;
+  height: 60rpx;
+  width: 100%;
+}
+
+.search_arr {
+  margin-top:10rpx;
+  border: 1px solid #e0e0e0;
+  background-color: rgb(236, 236, 236);
+  border-radius: 10rpx;
+}

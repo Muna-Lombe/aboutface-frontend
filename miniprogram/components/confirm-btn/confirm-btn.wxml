@@ -1,2 +1,2 @@
 <!--components/confirm-btn/confirm-btn.wxml-->
-<text>components/confirm-btn/confirm-btn.wxml</text>
+<button class="confirm-btn" bindtap="">Confirm</button>
