@@ -15,16 +15,19 @@ App({
         const durl = "https://aboutface.wogengapp.cn"
         const lurl = "http://localhost:3000"
         wx.request({
-          url: `${lurl}/api/v1/login`,
+          url: `${durl}/api/v1/login`,
           method: 'POST',
           data:{code:res.code},
           success(res){
             console.log("res",res)
             that.globalData.userInfo = res.data.user
             that.globalData.headers = res.data.headers
-            wx.switchTab({
-              url: '../product_index/product_index',
-            })
+            setTimeout(() => {
+              wx.switchTab({
+                url: '../product_index/product_index',
+              })
+            }, 5000);
+            
           }
         })
         // send the code to the backend
@@ -52,8 +55,8 @@ App({
     // })
   },
   globalData: {
-    // url:"https://aboutface.wogengapp.cn",
-    url:"http://localhost:3000",
+    url:"https://aboutface.wogengapp.cn",
+    // url:"http://localhost:3000",
     userProfile:"",
     userInfo:"",
     headers:"",
