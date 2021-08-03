@@ -1,4 +1,5 @@
 // pages/product_show/product_show.js
+let app = getApp()
 Page({
 
   /**
@@ -22,7 +23,32 @@ Page({
     })
   },
   onLoad: function (options) {
+    console.log(options)
+    const page = this
+    const url = app.globalData.url
+    const headers = app.globalData.headers
+    console.log("headers", headers)
+    console.log("url", url)
 
+    wx.request({
+      url: `${url}/api/v1/products/${options.id}`,
+      header: headers,
+      success(res){
+        console.log("res",res)
+        const product = res.data.product
+        let ingredients = product.product_ingredients
+        ingredients = ingredients.reverse()
+        console.log(ingredients);
+        page.setData({
+          product: product,
+          ingredients: ingredients
+        })
+      },
+      fail(res){
+        console.log("fail res:",res)
+
+      }
+    })
   },
 
   /**

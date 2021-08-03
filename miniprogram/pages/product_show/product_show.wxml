@@ -11,17 +11,19 @@
 
   <view class="show-container">
     <view class="show-box">
-      <view class="brand-name">COSRX</view>
+      <view class="brand-name">{{product.brand}}</view>
       <view class="img-card">
-        <image class="img" src="../../images/testproduct.png"></image>
+        <image class="img" src="{{product.photo_url}}"></image>
       </view>
-      <view class="product-name">Advanced Snail Mucin Gel Cleanser</view>
+      <view class="product-name">{{product.name}}</view>
     </view>
 
     <view class="ingredients-container">
       <view class="info-container">
         <view class="h2">Ingredients:</view>
-        <view class="ingredients">Water, Acrylates Copolymer, Butylene Glycol, Glycerin, Disodium Laureth Sulfosuccinate, Sodium Cocoyl Isethionate, 1,2-Hexanediol, Coco-Glucoside, Lauryl Betaine, Snail Secretion Filtrate, Arginine, Tromethamine, Potassium Cocoyl Glycinate, Fragrance, Carbomer, Sodium Chloride, Ethylhexylglycerin, Acrylates/C10-30 Alkyl Acrylate Crosspolymer, Sodium Polyacrylate, Disodium EDTA.</view>
+          <view wx:for="{{ingredients}}" wx:for-item="ingredient" wx:key="index">
+            <view class="ingredients">{{ingredient.ingredient.name}}</view>
+          </view>
       </view>
     </view>
 

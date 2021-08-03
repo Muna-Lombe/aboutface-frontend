@@ -1,6 +1,6 @@
 <!--components/product_card/product_card.wxml-->
 <view class="max-width">
-  <view class="product_card">
+  <view class="product_card" id="{{product.id}}">
     <view class="img-card">
       <image class="img" src="{{product.photo_url}}"></image>
     </view>

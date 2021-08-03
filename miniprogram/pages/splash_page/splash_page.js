@@ -13,12 +13,12 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-    setTimeout(() => {
-        wx.showLoading({
-          title: 'Logging In',
-          mask: true
-        })
-    }, 3000);
+    // setTimeout(() => {
+    //     wx.showLoading({
+    //       title: 'Logging In',
+    //       mask: true
+    //     })
+    // }, 3000);
     
   },
 

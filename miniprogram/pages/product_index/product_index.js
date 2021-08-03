@@ -32,18 +32,24 @@ Page({
   },
 
   goToShow: function(e){
+    console.log(e)
+    const id = e.currentTarget.id
     wx.navigateTo({
-      url: '../product_show/product_show',
+      url: `../product_show/product_show?id=${id}`,
     })
   },
   onSearch: function(e){
     console.log("search event res:", e)
     const searchInput = e.detail.value
     const url = app.globalData.url
-    const query = e.detail.value
+    const query = e.detail.value.input
+
+    console.log({query})
     const headers = app.globalData.headers
     const page = this
-
+    wx.showLoading({
+      title: 'Loading',
+    })
     wx.request({
       url: `${url}/api/v1/products?query=${query}`,
       header: headers,
@@ -53,18 +59,22 @@ Page({
         page.setData({
           products: products
         })
-        
+        wx.hideLoading()
       }
     })
       this.setData({class: ""});
   },
   clearSearch:function(){
     // make an api to fetch all products done by muna
-      console.log(options.input)
+      // console.log(this.options.input)
+      wx.showLoading({
+        title: 'Loading',
+      })
       const page = this
       const url = app.globalData.url
       const headers = app.globalData.headers
-      const query = options.input
+      // const query = options.input
+      this.setData({class: "hidden", searchValue: ""});
       wx.request({
         url: `${url}/api/v1/products`,
         header: headers,
@@ -74,9 +84,10 @@ Page({
           page.setData({
             products: products
           })
+          wx.hideLoading()
         }
       })
-    this.setData({class: "hidden", searchValue: ""});
+    
   },
   /**
    * Lifecycle function--Called when page load
@@ -92,7 +103,7 @@ Page({
         success(res){
           wx.hideLoading({})
           const products = res.data.products
-          console.log(res)
+          console.log('product index res',res)
         
           page.setData({
             products: products,
