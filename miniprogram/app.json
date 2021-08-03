@@ -29,7 +29,8 @@
     "compare-btn": "components/compare-btn/compare-btn",
     "add-routine-btn": "components/add-routine-btn/add-routine-btn",
     "add-new-routine": "components/add-new-routine/add-new-routine",
-    "banner": "components/banner/banner"
+    "banner": "components/banner/banner",
+    "modal-product-card": "components/modal-product-card/modal-product-card"
   },
   "window": {
     "backgroundTextStyle": "light",
