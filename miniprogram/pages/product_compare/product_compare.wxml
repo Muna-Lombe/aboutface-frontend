@@ -8,7 +8,40 @@
     <view class="top-text">Compare the ingredients of two products:</view>
 
     <view class="compare-box-container">
-      <compare_product></compare_product> 
+      <view class="button-padding">
+          <view bindtap="openModal" disabled="{{default}}"><compare_product></compare_product></view>
+        </view>
+        <view class="button-container">
+        <view wx-if='{{showModal}}' class='modal-mask' bindtap='hideModal' catchtouchmove='preventTouchMove'></view>
+        <view wx-if='{{showModal}}' class='modal-dialog'>
+        <form class="modal-container" bindsubmit="setName">
+          <form class='page_row' bindsubmit="onSearch">
+            <view class="search">
+            <view class="df search_arr">
+            <input style="width: 492rpx; height: 60rpx; display: block; box-sizing: border-box; left: NaNrpx; top: NaNrpx"  name="input" placeholder="Search for a product" value="{{searchValue}}"/>
+            <view class="{{class}}" bindtap="clearSearch">
+              <view class="clear">x</view>
+            </view>
+            </view>
+            <button class='search-btn' form-type = "submit" ><icon class="searchicon" size='20' type='search'></icon></button>
+            </view>
+          </form>
+          <view class="card-container">
+            <modal-product-card wx:for="{{products}}" wx:key="index" product="{{item}}" id="{{item.id}}"></modal-product-card>
+            </view>
+          <view class="confirm-cancel">
+            <view class="d-flex">
+              <cancel-btn bindtap="hideModal"></cancel-btn>
+              <view>
+              <!-- <confirm-btn bind:onTap = "setName"></confirm-btn> -->
+              </view>
+            </view>
+          </view>
+        </form>
+        </view>
+      </view>
+
+
       <compare_product></compare_product>
     </view>
 

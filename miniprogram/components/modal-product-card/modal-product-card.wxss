@@ -1,0 +1,25 @@
+/* components/modal-product-card/modal-product-card.wxss */
+
+.modal-product-container {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.brand-name {
+  display: flex;
+  width: 90%;
+  align-items: center;
+}
+
+.brand-name:hover {
+  opacity: .7;
+}
+
+.product-brand {
+ padding: 10rpx;
+}
+
+.product-name {
+  padding: 10rpx;
+}
