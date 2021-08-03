@@ -2,7 +2,7 @@
 <view class="max-width">
   <view class="product_card">
     <view class="img-card">
-      <image class="img" src="../../images/testproduct.png"></image>
+      <image class="img" src="{{product.photo_url}}"></image>
     </view>
     <view class="product-info">
       <view class="brand-name">{{product.brand}}</view>
