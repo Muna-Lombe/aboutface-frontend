@@ -22,8 +22,8 @@
         <view wx-if='{{showModal}}' class='modal-dialog'>
         <form class="modal-container" bindsubmit="setName">
           <view class="modal-text">Name of new routine:</view>
-          <view class="search_arr">
-            <input class="search" name = "input" bindinput="catchInput" placeholder="ex: nighttime routine" value="{{searchValue}}"/>
+          <view class="routine-put">
+            <input class="routine-name" name = "input" bindinput="catchInput" placeholder="ex: nighttime routine" value="{{searchValue}}"/>
           </view>
           <view class="confirm-cancel">
             <view class="d-flex">

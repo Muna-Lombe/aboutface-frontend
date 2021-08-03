@@ -1,6 +1,6 @@
 {
   "pages": [
-    "pages/index/index",
+    "pages/splash_page/splash_page",
     "pages/getOpenId/index",
     "pages/getMiniProgramCode/index",
     "pages/deployService/index",
@@ -16,8 +16,7 @@
     "pages/product_show/product_show",
     "pages/routine_index/routine_index",
     "pages/routine_show/routine_show",
-    "pages/product_compare/product_compare",
-    "pages/splash_page/splash_page"
+    "pages/product_compare/product_compare"
   ],
   "usingComponents": {
     "product_card": "components/product_card/product_card",

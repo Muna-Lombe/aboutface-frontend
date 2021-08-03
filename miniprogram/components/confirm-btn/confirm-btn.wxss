@@ -8,6 +8,5 @@
   height: 70rpx;
   border-radius: 5px;
   background-color: #EEB4B8;
-  color: #444444;
   font-weight: 400;
 }

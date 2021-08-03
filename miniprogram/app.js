@@ -19,14 +19,14 @@ App({
           method: 'POST',
           data:{code:res.code},
           success(res){
-            console.log("res",res)
+            console.log("login res",res)
             that.globalData.userInfo = res.data.user
             that.globalData.headers = res.data.headers
-            // setTimeout(() => {
+            setTimeout(() => {
               wx.switchTab({
                 url: '../product_index/product_index',
               })
-            // }, 5000);
+            }, 1500);
             
           }
         })
