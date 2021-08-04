@@ -15,7 +15,7 @@ App({
         const durl = "https://aboutface.wogengapp.cn"
         const lurl = "http://localhost:3000"
         wx.request({
-          url: `${durl}/api/v1/login`,
+          url: `${lurl}/api/v1/login`,
           method: 'POST',
           data:{code:res.code},
           success(res){
@@ -55,8 +55,8 @@ App({
     // })
   },
   globalData: {
-    url:"https://aboutface.wogengapp.cn",
-    // url:"http://localhost:3000",
+    // url:"https://aboutface.wogengapp.cn",
+    url:"http://localhost:3000",
     userProfile:"",
     userInfo:"",
     headers:"",

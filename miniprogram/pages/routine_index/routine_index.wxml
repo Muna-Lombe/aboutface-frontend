@@ -13,7 +13,7 @@
   <view class="user-name">Mike Rotch</view>
 
   <view class="routine-container">
-    <routine wx:for="{{routines}}" wx:key="index" routine="{{item}}" bindtap="goToShow"></routine>
+    <routine wx:for="{{routines}}" wx:key="index" routine="{{item}}" id = "{{item.id}}" bindtap="goToShow"></routine>
     <view class="button-padding">
           <view bindtap="openModal" disabled="{{default}}"><add-new-routine></add-new-routine></view>
         </view>
