@@ -29,7 +29,7 @@
 
     <view class="btns-container">
       <view class="btns">
-        <compare-btn bindtap = "onCompare"></compare-btn>
+        <compare-btn bindtap="onCompare"></compare-btn>
 
 
       
@@ -42,7 +42,7 @@
         <view class="modal-container">
           <view class="modal-text">Pick a routine to add to:</view>
           <view class="search_arr">
-            <input class="search" placeholder="ex: nighttime routine" value="{{searchValue}}"/>
+            <view bindtap="onAdd"></view>
           </view>
           <view class="confirm-cancel">
             <view class="d-flex">
