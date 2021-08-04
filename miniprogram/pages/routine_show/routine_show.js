@@ -1,5 +1,6 @@
 // pages/routine_show/routine_show.js
 let app = getApp()
+let id = ''
 Page({
 
   /**
@@ -22,6 +23,25 @@ Page({
       seeModal: true,
     })
     
+  },
+  deleteData: function(e) {
+    console.log(e)
+    const url = app.globalData.url
+    const headers = app.globalData.headers
+    const setId = id
+    console.log(setId)
+      wx.request({
+        url: `${url}/api/v1/routines/${setId}`,
+        method: 'DELETE',
+        header: headers,
+        success(res) {
+          console.log("success")
+          console.log(res.data)
+          wx.navigateBack({
+            delta: 0,
+          })
+        }
+      })
   },
 
     hideModal: function() {
