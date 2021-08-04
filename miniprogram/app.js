@@ -22,11 +22,11 @@ App({
             console.log("login res",res)
             that.globalData.userInfo = res.data.user
             that.globalData.headers = res.data.headers
-            // setTimeout(() => {
-            //   wx.switchTab({
-            //     url: '../product_index/product_index',
-            //   })
-            // }, 1500);
+            setTimeout(() => {
+              wx.switchTab({
+                url: '../product_index/product_index',
+              })
+            }, 1500);
             
           }
         })
