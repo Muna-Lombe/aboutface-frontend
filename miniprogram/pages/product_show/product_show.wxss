@@ -100,7 +100,7 @@
 /* buttons */
 
 .btns-container {
-  position: sticky;
+  position: fixed;
   bottom: 0;
   padding-top: 30rpx;
   background-color: #fbfbfb;
@@ -117,4 +117,55 @@
   width: 700rpx;
   display: flex;
   justify-content: space-evenly;
+}
+
+/* modal */
+
+.modal-dialog {
+  width: 540rpx;
+  height: 200rpx;
+  position: absolute;
+  overflow: hidden;
+  z-index: 5;
+  background: #f9f9f9;
+  margin: 100rpx 0rpx 0rpx 100rpx;
+  padding: 30rpx;
+  margin-left: auto;
+  margin-right: auto;
+  top: -50VH;
+  left: 0;
+  right: 0;
+}
+
+.modal-mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0rpx;
+  left: 0rpx;
+  background: #000;
+  opacity: 0.3;
+  overflow: hidden;
+  z-index: 1;
+  color: #fff;
+}
+
+.modal-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.d-flex {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.confirm-cancel {
+  position: absolute;
+  bottom: 10rpx;
+  right: 10rpx;
 }
