@@ -16,7 +16,6 @@
 </view>
 
 <view class="main-container" style="position: relative; left: 0rpx; top: -1rpx">
-  <image class="flower" src="../../images/blueflower.png"></image>
   <view class="search_bar-container">
 
   <form class='page_row' bindsubmit="onSearch">
@@ -30,6 +29,8 @@
       <button class='search-btn' form-type = "submit" ><icon class="searchicon" size='20' type='search'></icon></button>
     </view>
   </form>
+
+  <image class="flower" src="../../images/blueflower.png"></image>
 
   </view>
   <view class="card-container">

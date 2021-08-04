@@ -11,6 +11,7 @@
   </view>
 
   <view class="show-container">
+    <view class="product-circle"></view>
     <view class="show-box">
       <view class="brand-name">{{product.brand}}</view>
       <view class="img-card">
@@ -20,6 +21,7 @@
     </view>
 
     <view class="ingredients-container">
+      <view class="side"></view>
       <view class="info-container">
         <view class="h2">Ingredients:</view>
           <view wx:for="{{ingredients}}" wx:for-item="ingredient" wx:key="index">
@@ -58,6 +60,8 @@
     </view>
   
   </view>
+
+  <view class="bottom-circle"></view>
 
 
 
