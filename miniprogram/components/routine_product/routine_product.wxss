@@ -1,7 +1,7 @@
 /* components/routine_product/routine_product.wxss */
 
 .product-box {
-  width: 100%;
+  width: 700rpx;
   height: 200rpx;
   position: relative;
   color: #444444;
@@ -11,19 +11,16 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
-  height: 100%;
 }
 
 .img-name {
-  width: 100%;
   display: flex;
 }
 
 .product-box-img {
   width: 160rpx;
   height: 160rpx;
-  background-color: #EEB4B8;
+  background-color: #EDDD98;
   border-radius: 5px;
   margin-right: 20rpx;
   display: flex;
@@ -41,7 +38,7 @@
   height: 80rpx;
   width: 80rpx;
   border-radius: 50%;
-  background-color: #EEB4B8;
+  background-color: #EDDD98;
   display: flex;
   justify-content: center;
   align-items: center;
