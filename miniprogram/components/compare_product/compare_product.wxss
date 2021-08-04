@@ -2,13 +2,14 @@
 
 .compare-box-1 {
   width: 344rpx;
-  height: 550rpx;
+  height: 700rpx;
   background: #FBFBFB;
   border: 3px dashed #E7E7E7;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-size: 30rpx;
 }
 
 .product-box-img {
@@ -17,7 +18,7 @@
   background: #FBFBFB;
   border: 3px dashed #E7E7E7;
   box-sizing: border-box;
-  margin-top: 20rpx;
+  margin: 20rpx 0rpx;
   display: flex;
   flex-direction: column;
   align-items: center;

@@ -39,15 +39,12 @@
   </view>
 
   <view class="results-container">
-        <view class="results">
-          <view wx:for="{{results}}" wx:key="index" product="{{item}}">
+          <view class="results" wx:for="{{results}}" wx:key="index" product="{{item}}">
             <view class="product-info">{{item.gr1}} and {{item.gr2}} are not compatible.</view> 
             <view class="reason">{{item.reason}}</view>
             <view class="line">⊛⊛⊛⊛⊛</view>
           </view>
-        </view>
       </view>
-  <view class="yellow"></view>
 
 
 </body>
