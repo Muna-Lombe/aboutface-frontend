@@ -161,3 +161,8 @@
 .reason {
   margin-top: 30rpx;
 }
+
+.warning-icon {
+  height: 35rpx;
+  width: 40rpx;
+}
