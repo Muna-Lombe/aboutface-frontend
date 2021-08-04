@@ -8,7 +8,7 @@
     </view>
   </view>
 
-    <view class="routine-name">{{routine.name}}</view>
+    <view class="routine-name">Morning Routine</view>
 
   <view class="center">
     <view class="edit-delete">
@@ -47,7 +47,7 @@
             <view class="d-flex">
               <cancel-btn bindtap="hideModal"></cancel-btn>
               <view>
-                <confirm-btn></confirm-btn>
+                <confirm-btn bindtap="deleteData"></confirm-btn>
               </view>
             </view>
           </view>
@@ -59,13 +59,18 @@
   </view>
 
   <view class="product-container">
-    
-    <!-- <routine_product wx:for={{}}></routine_product> -->
-    <routine_product wx:for="{{routine.routine_products}}" wx:key="index" routine_product="{{item}}" id = "{{item.id}}" bindtap="goToProduct"></routine_product>
+
+    <routine_product></routine_product>
+    <routine_product></routine_product>
+    <routine_product></routine_product>
+    <routine_product></routine_product>
+    <routine_product></routine_product>
+    <routine_product></routine_product>
+    <routine_product></routine_product>
 
   </view>
 
-  <navigator class="add-product" url="../product_index/product_index">
+  <navigator class="add-product">
     <image class="add-icon" src="../../images/addiconpink.png"></image>
   </navigator>
 

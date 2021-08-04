@@ -1,5 +1,6 @@
 // pages/routine_show/routine_show.js
 let app = getApp()
+let id = ''
 Page({
 
   /**
@@ -14,14 +15,33 @@ Page({
     this.setData({
       showModal: true,
     })
-    
+
   },
 
   deleteModal: function() {
     this.setData({
       seeModal: true,
     })
-    
+
+  },
+  deleteData: function(e) {
+    console.log(e)
+    const url = app.globalData.url
+    const headers = app.globalData.headers
+    const setId = id
+    console.log(setId)
+      wx.request({
+        url: `${url}/api/v1/routines/${setId}`,
+        method: 'DELETE',
+        header: headers,
+        success(res) {
+          console.log("success")
+          console.log(res.data)
+          wx.navigateBack({
+            delta: 0,
+          })
+        }
+      })
   },
 
     hideModal: function() {
@@ -29,28 +49,14 @@ Page({
         showModal: false,
         seeModal: false,
       })
-    },  
+    },
 
   /**
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-    const id = options.id
-    const page = this
-    const url = app.globalData.url
-    const headers = app.globalData.headers
-    // console.log("headers:",headers)
-    wx.request({
-      url: `${url}/api/v1/routines/${id}`,
-      header: headers,
-      success(res){
-        const routine = res.data.routine
-        console.log("res:",res)
-        page.setData({
-          routine: routine
-        })
-      }
-    })
+    console.log(options)
+    id = options.id
   },
 
   /**
