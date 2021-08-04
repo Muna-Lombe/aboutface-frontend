@@ -22,14 +22,14 @@
       <view class="info-container">
         <view class="h2">Ingredients:</view>
           <view wx:for="{{ingredients}}" wx:for-item="ingredient" wx:key="index">
-            <view class="ingredients">{{ingredient.ingredient.name}}</view>
+            <view class="ingredients"> - {{ingredient.ingredient.name}}</view>
           </view>
       </view>
     </view>
 
     <view class="btns-container">
       <view class="btns">
-        <compare-btn bindtap="onCompare"></compare-btn>
+        <compare-btn bindtap="onCompare" data-product = "{{product}}"></compare-btn>
 
 
       

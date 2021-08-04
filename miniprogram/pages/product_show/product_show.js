@@ -23,9 +23,12 @@ Page({
   /**
    * Lifecycle function--Called when page load
    */
-  onCompare:function(){
+  onCompare:function(e){
+    console.log(e.currentTarget.dataset.product)
+    const product = e.currentTarget.dataset.product
+    app.globalData["product"] = product
     wx.switchTab({
-      url: '../product_compare/product_compare',
+      url: `../product_compare/product_compare`,
     })
   },
   onAdd:function(){
