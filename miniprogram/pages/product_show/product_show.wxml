@@ -30,7 +30,31 @@
     <view class="btns-container">
       <view class="btns">
         <compare-btn bindtap = "onCompare"></compare-btn>
-        <add-routine-btn bindtap = "onAdd"></add-routine-btn>
+
+
+      
+        <view class="button-padding">
+          <view bindtap="routineModal" disabled="{{default}}"><add-routine-btn></add-routine-btn></view>
+        </view>
+        <view class="button-container">
+        <view wx-if='{{showModal}}' class='modal-mask' bindtap='hideModal' catchtouchmove='preventTouchMove'></view>
+        <view wx-if='{{showModal}}' class='modal-dialog'>
+        <view class="modal-container">
+          <view class="modal-text">Pick a routine to add to:</view>
+          <view class="search_arr">
+            <input class="search" placeholder="ex: nighttime routine" value="{{searchValue}}"/>
+          </view>
+          <view class="confirm-cancel">
+            <view class="d-flex">
+              <cancel-btn bindtap="hideModal"></cancel-btn>
+            </view>
+          </view>
+        </view>
+        </view>
+      </view>
+
+
+
       </view>
     </view>
   
