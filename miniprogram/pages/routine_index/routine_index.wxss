@@ -3,12 +3,12 @@
 .profile-background {
   width: 100%;
   height: 300rpx;  
-  background-color: #FFE3E5;
+  background-color: #EDDD98;
   position: relative;
 }
 
 .swish {
-  width: 100%;
+  width: 108%;
   height: 300rpx;
 }
 
@@ -29,8 +29,8 @@
   width: 210rpx;
   height: 210rpx;
   border-radius: 50%;
-  border: 4rpx dashed #0F1F82;
-  opacity: .2;
+  border: 4rpx dashed #444;
+  opacity: .5;
 }
 
 .user-name {

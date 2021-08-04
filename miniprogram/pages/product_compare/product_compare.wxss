@@ -27,7 +27,7 @@
   max-height: calc(100vh - 510rpx);
   overflow-y: auto;
   width: 540rpx;
-  height: 400rpx;
+  height: 540rpx;
   z-index: 5;
   background: #f9f9f9;
   margin: 100rpx 0rpx 0rpx 100rpx;
@@ -117,10 +117,9 @@
 
 .compare-btn {
   margin: 30rpx 0rpx;
-  background-color: #E7E7E7;
+  background-color: #444;
   width: 100% !important;
-  color: #444;
-  border: 1px solid rgb(224, 224, 224);
+  color: #fbfbfb;
 }
 
 .results-container {

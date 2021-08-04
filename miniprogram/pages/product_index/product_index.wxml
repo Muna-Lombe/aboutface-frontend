@@ -15,7 +15,7 @@
 </view>
 </view>
 
-<view class="main-container" style="position: relative; left: 0rpx; top: -1rpx">
+<view class="main-container">
   <view class="search_bar-container">
 
   <form class='page_row' bindsubmit="onSearch">
@@ -30,7 +30,12 @@
     </view>
   </form>
 
-  <image class="flower" src="../../images/blueflower.png"></image>
+  <view class="fixed">
+    <view class="circles">
+      <view class="black-circle"></view>
+      <view class="yellow-circle"></view>
+    </view>
+  </view>
 
   </view>
   <view class="card-container">

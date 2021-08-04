@@ -7,6 +7,7 @@
   width: 150rpx !important;
   height: 70rpx;
   border-radius: 5px;
-  background-color: #EEB4B8;
+  background-color: #EDDD98;
   font-weight: 400;
+  color: #444;
 }

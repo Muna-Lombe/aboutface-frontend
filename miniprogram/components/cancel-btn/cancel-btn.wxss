@@ -9,4 +9,5 @@
   border-radius: 5px;
   background-color: rgb(236, 236, 236);
   margin-right: 10rpx;
+  color: #444;
 }
