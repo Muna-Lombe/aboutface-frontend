@@ -15,9 +15,25 @@ Page({
     this.setData({
       showModal: true,
     })
-    
   },
 
+  confirmEdit: function(e) {
+    const data = e.detail.value
+    const setId = id 
+    const url = app.globalData.url
+    wx.request({
+      url: `${url}/api/v1/routines/${id}`,
+      method: "PUT",
+      data: data,
+      success(res) {
+        // console.log("success")
+        // console.log(res.data)
+        wx.navigateBack({
+          delta: 1,
+        })
+      }
+    })
+  },  
   deleteModal: function() {
     this.setData({
       seeModal: true,
