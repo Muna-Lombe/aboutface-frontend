@@ -1,8 +1,5 @@
 /* pages/product_show/product_show.wxss */
 
-.navbar {
-}
-
 .flex-nav {
   display: flex;
 }
