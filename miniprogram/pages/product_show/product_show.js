@@ -10,7 +10,9 @@ Page({
   },
 
   routineModal: function() {
+    const routines = app.globalData.routines
     this.setData({
+      routines,
       showModal: true,
     })
   },
@@ -31,10 +33,41 @@ Page({
       url: `../product_compare/product_compare`,
     })
   },
-  onAdd:function(){
-    wx.navigateTo({
-      url: '../routine_show/routine_show',
+  onAdd:function(e){
+    console.log(e.currentTarget)
+    const product = e.currentTarget.dataset.product
+    const routineId = e.currentTarget.id
+    const ingredients = product.product_ingredients
+    console.log(ingredients)
+  //   {
+  //     "routine_id": 5,
+  //     "product_id": 4
+  // }
+    const url = app.globalData.url
+    const data = {"routine_id": routineId, "product_id": product.id}
+    const headers = app.globalData.headers
+    const page = this
+    wx.showLoading({
+      title: 'Loading',
     })
+    wx.request({
+      url: `${url}/api/v1/routines/${routineId}/routine_products`,
+      method: 'POST',
+      header: headers,
+      data: data, 
+      success(res){
+        console.log(res)
+        // page.setData({
+        //   results
+        // })
+        wx.hideLoading()
+        wx.navigateTo({
+          url: `../routine_show/routine_show?id=${routineId}`,
+        })
+      }
+    })
+
+    
   },
   onLoad: function (options) {
     console.log(options)
@@ -61,6 +94,19 @@ Page({
       fail(res){
         console.log("fail res:",res)
 
+      }
+    })
+
+    // const page = this
+    // const headers = app.globalData.headers
+    console.log("headers:",headers)
+    wx.request({
+      url: `${url}/api/v1/routines`,
+      header: headers,
+      success(res){
+        const routines = res.data.routines
+        console.log(routines)
+        app.globalData["routines"] = routines
       }
     })
   },
