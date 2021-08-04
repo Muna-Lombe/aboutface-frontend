@@ -47,7 +47,7 @@
             <view class="d-flex">
               <cancel-btn bindtap="hideModal"></cancel-btn>
               <view>
-                <confirm-btn></confirm-btn>
+                <confirm-btn bindtap="deleteData"></confirm-btn>
               </view>
             </view>
           </view>
