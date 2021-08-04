@@ -1,6 +1,6 @@
 // pages/routine_show/routine_show.js
 let app = getApp()
-let id = ''
+let setId = ''
 Page({
 
   /**
@@ -26,12 +26,13 @@ Page({
   },
   deleteData: function(e) {
     console.log(e)
+    // console.log(id)
     const url = app.globalData.url
     const headers = app.globalData.headers
-    const setId = id
+    const getId = setId
     console.log(setId)
       wx.request({
-        url: `${url}/api/v1/routines/${setId}`,
+        url: `${url}/api/v1/routines/${getId}`,
         method: 'DELETE',
         header: headers,
         success(res) {
@@ -55,7 +56,9 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
+    console.log(options)
     const id = options.id
+    setId = options.id
     const page = this
     const url = app.globalData.url
     const headers = app.globalData.headers
