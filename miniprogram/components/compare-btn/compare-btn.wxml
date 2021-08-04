@@ -1,2 +1,4 @@
 <!--components/compare-btn/compare-btn.wxml-->
-<view class="btn">Compare Product</view>
+<view class="btn">
+  <view class="text">Compare Product</view>
+</view>

@@ -2,19 +2,27 @@
 
 .btn {
   position: absolute;
-  top: 60rpx;
+  top: 75rpx;
   left: 110rpx;
   background-color: #fbfbfb;
-  width: 175rpx;
-  height: 175rpx;
+  width: 150rpx;
+  height: 150rpx;
   font-family: Open Sans;
   font-style: normal;
   font-weight: 400;
   font-size: 20rpx;
   line-height: 20px;
   border-radius: 50%;
+  color: #444;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #444;
+}
+
+.text {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+  width: 70%;
 }
