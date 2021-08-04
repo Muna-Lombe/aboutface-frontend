@@ -123,15 +123,8 @@ Page({
   },
 
   onLoad: function (options) {
-    const product = app.globalData.product
-    console.log("ssssss", product)
-    const activeProducts = this.data.activeProducts
-    this.data.activeBox = 0
-    activeProducts[this.data.activeBox] = product
-    this.setData({
-      activeProducts,
-      showModal: false
-    })
+    
+    
 },
 
   /**
@@ -145,7 +138,17 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow: function () {
-
+    if(app.globalData.product){
+      const product = app.globalData.product
+      console.log("ssssss", product)
+      const activeProducts = this.data.activeProducts
+      this.data.activeBox = 0
+      activeProducts[this.data.activeBox] = product
+      this.setData({
+        activeProducts,
+        showModal: false
+      })
+    }
   },
 
   /**
