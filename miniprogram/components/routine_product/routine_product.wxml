@@ -4,16 +4,16 @@
   <view class="product-info">
     <view class="img-name">
       <view class="product-box-img">
-        <image class="img" src="../../images/testproduct.png"></image>
+        <image class="img" src="{{routine_product.product.photo_url}}"></image>
       </view>
       <view class="name-brand">
-        <view class="product-name">Advanced Snail Mucin Gel Cleanser</view>
-        <view class="product-brand">COSRX</view>
+        <view class="product-name">{{routine_product.product.name}}</view>
+        <view class="product-brand">{{routine_product.product.brand}}</view>
       </view>
     </view>
 
     <view class="delete-box">
-      <view class="delete-icon"></view>
+      <view class="delete-icon" bindtap="onDelete"></view>
     </view>
 
   </view>

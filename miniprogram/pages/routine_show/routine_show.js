@@ -1,4 +1,5 @@
 // pages/routine_show/routine_show.js
+let app = getApp()
 Page({
 
   /**
@@ -34,7 +35,22 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-
+    const id = options.id
+    const page = this
+    const url = app.globalData.url
+    const headers = app.globalData.headers
+    // console.log("headers:",headers)
+    wx.request({
+      url: `${url}/api/v1/routines/${id}`,
+      header: headers,
+      success(res){
+        const routine = res.data.routine
+        console.log("res:",res)
+        page.setData({
+          routine: routine
+        })
+      }
+    })
   },
 
   /**

@@ -8,7 +8,7 @@
     </view>
   </view>
 
-    <view class="routine-name">Morning Routine</view>
+    <view class="routine-name">{{routine.name}}</view>
 
   <view class="center">
     <view class="edit-delete">
@@ -60,17 +60,12 @@
 
   <view class="product-container">
     
-    <routine_product></routine_product>
-    <routine_product></routine_product>
-    <routine_product></routine_product>
-    <routine_product></routine_product>
-    <routine_product></routine_product>
-    <routine_product></routine_product>
-    <routine_product></routine_product>
+    <!-- <routine_product wx:for={{}}></routine_product> -->
+    <routine_product wx:for="{{routine.routine_products}}" wx:key="index" routine_product="{{item}}" id = "{{item.id}}" bindtap="goToProduct"></routine_product>
 
   </view>
 
-  <navigator class="add-product">
+  <navigator class="add-product" url="../product_index/product_index">
     <image class="add-icon" src="../../images/addiconpink.png"></image>
   </navigator>
 
