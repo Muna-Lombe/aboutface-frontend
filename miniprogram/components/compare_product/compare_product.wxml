@@ -1,15 +1,16 @@
 <!--components/compare_product/compare_product.wxml-->
 <view class="compare-box-1">
+  <block wx:if="{{product}}">
   <view class="product-box-img">
-    <block wx:if="{{product}}">
-      <image class="plus-icon" src="{{product.photo_url}}"></image>
-      <view class="add-text" >{{product.name}}</view>  
-    </block>
-    <block wx:else>
+      <image class="product-img" src="{{product.photo_url}}"></image>
+  </view>
+  <view class="product-name" >{{product.name}}</view>  
+  </block>
+  <block wx:else>
+    <view class="product-box-img">
       <image class="plus-icon" src="../../images/compareplusicon.png"></image>
       <view class="add-text">{{text}}</view>
-    </block>
-
-  </view>
+    </view>
+  </block>
 
 </view>
