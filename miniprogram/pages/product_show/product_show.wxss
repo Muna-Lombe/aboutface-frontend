@@ -1,7 +1,6 @@
 /* pages/product_show/product_show.wxss */
 
 .navbar {
-  background-color: #E8D477;
 }
 
 .flex-nav {
@@ -25,6 +24,17 @@
   flex-direction: column;
   align-items: center;
   margin-top: 30rpx;
+  position: relative;
+}
+
+.product-circle {
+  position: absolute;
+  left: 210rpx;
+  top: 20rpx;
+  width: 490rpx;
+  height: 490rpx;
+  border-radius: 50%;
+  background-color: #EDDD98;
 }
 
 .show-box {
@@ -34,7 +44,6 @@
   align-items: center;
   height: 700rpx;
   width: 700rpx;
-  background-color: #EDDD98;
   border-radius: 30rpx;
   position: relative;
   color: #444444;
@@ -50,8 +59,8 @@
 }
 
 .img {
-  height: 70%;
-  width: 70%;
+  height: 100%;
+  width: 100%;
   filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.5));
 }
 
@@ -67,7 +76,7 @@
 .product-name {
   text-align: center;
   font-weight: bold;
-  font-size: 40rpx;
+  font-size: 30rpx;
   width: 80%;
   margin-bottom: 40rpx;
   font-family: Open Sans;
@@ -76,47 +85,55 @@
 /* ingredients */
 
 .ingredients-container {
+  width: 100%;
   height: 100%;
   display: flex;
-  flex-direction: column;
   margin-top: 30rpx;
-  margin-bottom: 50rpx;
+  position: relative;
+  background-color: #444;
+}
+
+.side {
+  width: 5%;
+  background-color: #EDDD98;
+  padding-bottom: 50rpx;
 }
 
 .info-container {
-  width: 700rpx;
+  width: 50%;
+  color: #fbfbfb;
+  padding: 30rpx;
+  padding-bottom: 50rpx;
 }
 
 .h2 {
   font-weight: bold;
   margin-bottom: 30rpx;
-  font-size: 35rpx;
+  font-size: 30rpx;
 }
 
 .ingredients {
-  font-size: 33rpx;
+  font-size: 25rpx;
+  font-weight: 200;
 }
 
 /* buttons */
 
 .btns-container {
   position: fixed;
-  bottom: 0;
-  padding-top: 30rpx;
-  background-color: #fbfbfb;
+  bottom: -170rpx;
+  right: -300rpx;
+  background-color: #EDDD98;
   box-shadow: 0px 2px 4px rgba(214, 214, 214, 0.5);
   margin-top: 30rpx;
-  height: 150rpx;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  height: 600rpx;
+  width: 600rpx;
+  border-radius: 50%;
 }
 
 .btns {
   width: 700rpx;
-  display: flex;
-  justify-content: space-evenly;
+  position: relative;
 }
 
 /* modal */
@@ -133,8 +150,7 @@
   margin-left: auto;
   margin-right: auto;
   top: -50VH;
-  left: 0;
-  right: 0;
+  left: -375rpx;
 }
 
 .modal-mask {
