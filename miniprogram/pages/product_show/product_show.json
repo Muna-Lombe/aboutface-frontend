@@ -1,3 +1,5 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "incompatible-popup": "../../components/incompatible-popup/incompatible-popup"
+  }
 }

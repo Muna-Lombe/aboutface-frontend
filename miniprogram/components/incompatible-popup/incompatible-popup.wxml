@@ -1,0 +1,12 @@
+<view class="overlay">
+  <view class="popup">
+    WARNING, THIS PRODUCT IS INCOMPATIBLE WITH:
+   <view wx:for="{{products}}" wx:key="index">
+    •{{item.product.name}}
+   </view> 
+
+   <view>
+    <button bindtap="continue">Continue?</button>
+   </view>
+  </view>
+</view>

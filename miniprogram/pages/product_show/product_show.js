@@ -7,6 +7,9 @@ Page({
    */
   data: {
     showModal: false,
+    incompatibleProducts: [],
+    chosenRoutine: null,
+    incompatible: false
   },
 
   routineModal: function() {
@@ -33,23 +36,79 @@ Page({
       url: `../product_compare/product_compare`,
     })
   },
-  onAdd:function(e){
+  async compare(productOne, productTwo){
+    // /api/v1/products/compare?compare="
+    // console.log("products",)
+    return new Promise((resolve, reject) => {
+      const data = this.data.activeProducts
+      const url = app.globalData.url
+      const compare = {"compare":{"name": productOne, "compare_to": productTwo}}
+      const headers = app.globalData.headers
+      const page = this
+      wx.showLoading({
+        title: 'Loading',
+      })
+      wx.request({
+        url: `${url}/api/v1/products/compare`,
+        method: 'POST',
+        header: headers,
+        data: compare, 
+        success(res){
+          const results = res.data.compare_results
+          console.log(results)
+          // page.setData({
+          //   results
+          // })
+          wx.hideLoading()
+          resolve(results)
+        }
+      })
+    })
+    
+  },
+  async onAdd(e){
+    const routine = e.currentTarget.dataset.routine
+
     console.log(e.currentTarget)
     const product = e.currentTarget.dataset.product
-    const routineId = e.currentTarget.id
-    const ingredients = product.product_ingredients
-    console.log(ingredients)
-  //   {
-  //     "routine_id": 5,
-  //     "product_id": 4
-  // }
-    const url = app.globalData.url
-    const data = {"routine_id": routineId, "product_id": product.id}
-    const headers = app.globalData.headers
+    this.setData({chosenRoutine: e.currentTarget.id, chosenProduct: product})
+  
+    // const url = app.globalData.url
+    // const data = {"routine_id": routineId, "product_id": product.id}
+    // const headers = app.globalData.headers
     const page = this
     wx.showLoading({
       title: 'Loading',
     })
+    const products = routine.routine_products
+    console.log("product1:",products, "product2:", product)
+    const incompatibleProducts = this.data.incompatibleProducts
+    products.forEach(prod => {
+      // console.log("pod:",prod.product.name)
+      const result = this.compare(prod.product.name,product.name);
+      // console.log({result})
+      if (result.then(res => res.some(x => !x.compatible))){
+        console.log(prod.product.name, "is not comapatible with", product)
+        incompatibleProducts.push(prod)
+      }
+    });
+    const incompatible = incompatibleProducts.length > 0
+    this.setData({incompatibleProducts, incompatible})
+    console.log(999, this.data.incompatibleProducts)
+    wx.hideLoading()
+    // routine.product.product_ingredients
+    if (!incompatible) {
+      this.addToRoutine()
+    }
+  },
+  addToRoutine() {
+    const routineId = this.data.chosenRoutine
+    wx.showLoading({
+      title: 'Loading'
+    })
+    const url = app.globalData.url
+    const data = {"routine_id": routineId, "product_id": this.data.chosenProduct.id}
+    const headers = app.globalData.headers
     wx.request({
       url: `${url}/api/v1/routines/${routineId}/routine_products`,
       method: 'POST',
@@ -66,8 +125,6 @@ Page({
         })
       }
     })
-
-    
   },
   onLoad: function (options) {
     console.log(options)
@@ -122,7 +179,7 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow: function () {
-
+    this.hideModal()
   },
 
   /**
