@@ -1,5 +1,6 @@
 <!--pages/product_show/product_show.wxml-->
 <body>
+  <incompatible-popup bind:addtoroutine="addToRoutine" wx:if="{{incompatible}}" products="{{incompatibleProducts}}" />
   <view class="navbar">
     <view class="flex-nav">
       <navigator open-type="navigateBack">
@@ -22,7 +23,7 @@
       <view class="info-container">
         <view class="h2">Ingredients:</view>
           <view wx:for="{{ingredients}}" wx:for-item="ingredient" wx:key="index">
-            <view class="ingredients"> - {{ingredient.ingredient.name}}</view>
+            <view class="ingredients"> • {{ingredient.ingredient.name}}</view>
           </view>
       </view>
     </view>
@@ -41,7 +42,7 @@
         <view wx-if='{{showModal}}' class='modal-dialog'>
         <view class="modal-container">
           <view class="modal-text">Pick a routine to add to:</view>
-            <view wx:for="{{routines}}" wx:key="index" id="{{item.id}}"  bindtap="onAdd" data-product = "{{product}}" > - {{item.name}}</view>
+            <view wx:for="{{routines}}" wx:key="index" id="{{item.id}}"  bindtap="onAdd" data-product = "{{product}}" data-routine = "{{item}}" > • {{item.name}}</view>
           <view class="confirm-cancel">
             <view class="d-flex">
               <cancel-btn bindtap="hideModal"></cancel-btn>
