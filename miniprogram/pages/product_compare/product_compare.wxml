@@ -8,44 +8,57 @@
     <view class="top-text">Compare the ingredients of two products:</view>
 
     <view class="compare-box-container">
-      <view class="button-padding">
-          <view bindtap="openModal" disabled="{{default}}"><compare_product></compare_product></view>
+        <view class="button-padding">
+          <view class="flex">
+            <compare_product bindtap="openModal" disabled="{{default}}" data-box="0" box="{{0}}" product="{{activeProducts[0]}}"></compare_product>
+            <compare_product bindtap="openModal" disabled="{{default}}" data-box="1" box="{{1}}" product="{{activeProducts[1]}}"></compare_product>
+          </view>
         </view>
         <view class="button-container">
         <view wx-if='{{showModal}}' class='modal-mask' bindtap='hideModal' catchtouchmove='preventTouchMove'></view>
         <view wx-if='{{showModal}}' class='modal-dialog'>
-        <form class="modal-container" bindsubmit="setName">
           <form class='page_row' bindsubmit="onSearch">
             <view class="search">
-            <view class="df search_arr">
-            <input style="width: 492rpx; height: 60rpx; display: block; box-sizing: border-box; left: NaNrpx; top: NaNrpx"  name="input" placeholder="Search for a product" value="{{searchValue}}"/>
-            <view class="{{class}}" bindtap="clearSearch">
-              <view class="clear">x</view>
-            </view>
-            </view>
-            <button class='search-btn' form-type = "submit" ><icon class="searchicon" size='20' type='search'></icon></button>
+              <view class="df search_arr">
+                <input style="width: 492rpx; height: 60rpx; display: block; box-sizing: border-box; left: NaNrpx; top: NaNrpx"  name="input" placeholder="Search for a product" value="{{searchValue}}"/>
+                <view class="{{class}}" bindtap="clearSearch">
+                  <view class="clear">x</view>
+                </view>
+              </view>
+              <button class='search-btn' form-type = "submit" ><icon class="searchicon" size='20' type='search'></icon></button>
             </view>
           </form>
           <view class="card-container">
-            <modal-product-card wx:for="{{products}}" wx:key="index" product="{{item}}" id="{{item.id}}"></modal-product-card>
+            <modal-product-card wx:for="{{products}}" wx:key="index" product="{{item}}" id="{{item.id}}" bindtap = "getID" data-product = "{{item}}"></modal-product-card>
             </view>
           <view class="confirm-cancel">
             <view class="d-flex">
               <cancel-btn bindtap="hideModal"></cancel-btn>
               <view>
-              <!-- <confirm-btn bind:onTap = "setName"></confirm-btn> -->
               </view>
             </view>
           </view>
-        </form>
         </view>
       </view>
 
 
-      <compare_product></compare_product>
+      
     </view>
 
   </view>
 
 
 </body>
+<button bindtap = "compare">Compare</button>
+<text
+  style="position: relative; width: 750rpx; height: 272rpx; display: block; box-sizing: border-box; left: 0rpx; top: 0rpx">Results:
+  <text style="position: relative; left: 32rpx; top: -1rpx" wx:for="{{results}}" wx:key="index" product="{{item}}">
+    <text>{{item.id}}. {{item.gr1}} and {{item.gr2}} are not compatible <br/>reason: {{item.reason}}</text>
+  </text>
+</text>
+
+
+
+
+
+
