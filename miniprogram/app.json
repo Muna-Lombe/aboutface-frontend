@@ -39,7 +39,7 @@
     "navigationStyle": "custom"
   },
   "tabBar": {
-    "selectedColor":"#0F1F82",
+    "selectedColor":"#767676",
     "list": [{
       "pagePath": "pages/product_index/product_index",
       "text": "Home",

@@ -12,9 +12,6 @@
 .compare-box-container {
   margin-top: 30rpx;
   width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 .flex{
   display: flex;
@@ -25,13 +22,14 @@
 /* modal */
 
 .modal-dialog {
+  max-height: calc(100vh - 510rpx);
+  overflow-y: auto;
   width: 540rpx;
   height: 400rpx;
-  overflow: hidden;
   z-index: 5;
   background: #f9f9f9;
   margin: 100rpx 0rpx 0rpx 100rpx;
-  padding: 30rpx;
+  padding: 20rpx;
   position: absolute;
   margin-left: auto;
   margin-right: auto;
@@ -59,19 +57,6 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-}
-
-.d-flex {
-  display: flex;
-  width: 100%;
-  height: 100%;
-  position: relative;
-}
-
-.confirm-cancel {
-  position: absolute;
-  bottom: 10rpx;
-  right: 10rpx;
 }
 
 /* search bar */
@@ -137,4 +122,57 @@
 .card-container {
   height: 800rpx;
   margin: 20rpx 0rpx;
+  padding-bottom: 30rpx;
+}
+
+.compare-btn {
+  margin: 30rpx 0rpx;
+  background-color: #444;
+  width: 100% !important;
+  color: #EDDD98;
+}
+
+.results-container {
+  color: #444;
+  width: 100%;
+  height: 100%;
+  margin-top: 30rpx;
+  background-image: linear-gradient(-60deg, #E8D477, #EDDD98);
+  padding: 30rpx;
+}
+
+.results {
+  width: 90%;
+}
+
+.h2 {
+  font-weight: 500;
+  font-size: 35rpx;
+}
+
+.strong {
+  font-weight: 500;
+}
+
+.product-info {
+  display: flex;
+}
+
+.line {
+  margin: 30rpx 0rpx;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.reason {
+  margin-top: 30rpx;
+}
+
+.yellow {
+  width: 100%;
+  height: 800rpx;
+  background-image: linear-gradient(-60deg, #E8D477, #EDDD98);
+  position: fixed;
+  z-index: -6;
 }
