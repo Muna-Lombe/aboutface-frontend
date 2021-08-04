@@ -1,2 +1,4 @@
 <!--components/add-routine-btn/add-routine-btn.wxml-->
-<view class="btn">Add to Routine</view>
+<view class="btn">
+  <view class="text">Add to Routine</view>
+</view>

@@ -3,10 +3,10 @@
 .btn {
   background-color: #444;
   position: absolute;
-  top: 250rpx;
+  top: 240rpx;
   left: 60rpx;
-  width: 175rpx;
-  height: 175rpx;
+  width: 150rpx;
+  height: 150rpx;
   font-family: Open Sans;
   font-style: normal;
   font-weight: 400;
@@ -17,4 +17,12 @@
   align-items: center;
   justify-content: center;
   color: #EDD998;
+}
+
+.text {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+  width: 70%;
 }
