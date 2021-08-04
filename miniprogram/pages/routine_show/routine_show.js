@@ -56,24 +56,27 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-    console.log(options)
-    const id = options.id
-    setId = options.id
-    const page = this
-    const url = app.globalData.url
-    const headers = app.globalData.headers
-    // console.log("headers:",headers)
-    wx.request({
-      url: `${url}/api/v1/routines/${id}`,
-      header: headers,
-      success(res){
-        const routine = res.data.routine
-        console.log("res:",res)
-        page.setData({
-          routine: routine
-        })
-      }
-    })
+    if(options){
+      console.log(options)
+      const id = options.id
+      setId = options.id
+      const page = this
+      const url = app.globalData.url
+      const headers = app.globalData.headers
+      // console.log("headers:",headers)
+      wx.request({
+        url: `${url}/api/v1/routines/${id}`,
+        header: headers,
+        success(res){
+          const routine = res.data.routine
+          console.log("res:",res)
+          page.setData({
+            routine: routine
+          })
+        }
+      })
+    }
+    
   },
 
   /**
@@ -87,7 +90,7 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow: function () {
-
+    this.onLoad()
   },
 
   /**

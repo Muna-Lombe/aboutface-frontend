@@ -41,9 +41,7 @@
         <view wx-if='{{showModal}}' class='modal-dialog'>
         <view class="modal-container">
           <view class="modal-text">Pick a routine to add to:</view>
-          <view class="search_arr">
-            <view bindtap="onAdd"></view>
-          </view>
+            <view wx:for="{{routines}}" wx:key="index" id="{{item.id}}"  bindtap="onAdd" data-product = "{{product}}" > - {{item.name}}</view>
           <view class="confirm-cancel">
             <view class="d-flex">
               <cancel-btn bindtap="hideModal"></cancel-btn>
