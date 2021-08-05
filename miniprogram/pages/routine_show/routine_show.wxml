@@ -66,8 +66,10 @@
 
   </view>
 
-  <navigator  url="../product_index/product_index" class="add-product">
-    <image class="add-icon" src="../../images/addiconpink.png"></image>
+  <navigator url="../product_index/product_index" open-type="switchTab">
+    <view class="add-product">
+      <image class="add-icon" src="../../images/addiconpink.png"></image>
+    </view>
   </navigator>
 
 </body>
