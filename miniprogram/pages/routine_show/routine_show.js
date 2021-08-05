@@ -18,28 +18,32 @@ Page({
   },
 
   confirmEdit: function(e) {
+    console.log(e)
     const data = e.detail.value
-    const setId = id 
-    const url = app.globalData.url
-    wx.request({
-      url: `${url}/api/v1/routines/${id}`,
-      method: "PUT",
-      data: data,
-      success(res) {
-        // console.log("success")
-        // console.log(res.data)
-        wx.navigateBack({
-          delta: 1,
-        })
-      }
-    })
-  },  
-  deleteModal: function() {
-    this.setData({
-      seeModal: true,
-    })
+    console.log("data-id",this.data)
+    // const setId = options.id 
+    // console.log(setId)
+    // const url = app.globalData.url
+    // console.log(url)
+  //   wx.request({
+  //     url: `${url}/api/v1/routines/${id}`,
+  //     method: "PUT",
+  //     data: data,
+  //     success(res) {
+  //       // console.log("success")
+  //       // console.log(res.data)
+  //       wx.navigateBack({
+  //         delta: 1,
+  //       })
+  //     }
+  //   })
+  // },  
+  // deleteModal: function() {
+  //   this.setData({
+  //     seeModal: true,
+  //   })
     
-  },
+   },
   deleteData: function(e) {
     console.log(e)
     const url = app.globalData.url
