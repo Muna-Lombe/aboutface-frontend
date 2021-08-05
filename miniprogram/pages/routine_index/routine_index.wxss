@@ -2,22 +2,23 @@
 
 .profile-background {
   width: 100%;
-  height: 300rpx;  
+  height: 280rpx;  
   background-color: #EDDD98;
   position: relative;
 }
 
 .swish {
-  width: 108%;
-  height: 300rpx;
-  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  overflow-x: hidden;
 }
 
 .border-radius {
   position: absolute;
   overflow: hidden;
   left: 278rpx; 
-  top: 198rpx;
+  top: 178rpx;
   height: 199rpx;
   width: 199rpx;
   border-radius: 50%;
@@ -28,7 +29,7 @@
 .dashed-border {
   position: absolute; 
   left: 270rpx; 
-  top: 191rpx;
+  top: 171rpx;
   width: 210rpx;
   height: 210rpx;
   border-radius: 50%;
