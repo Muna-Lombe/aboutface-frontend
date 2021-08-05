@@ -86,10 +86,11 @@ Page({
     products.forEach(prod => {
       // console.log("pod:",prod.product.name)
       const result = this.compare(prod.product.name,product.name);
-      // console.log({result})
+      console.log({result})
       if (result.then(res => res.some(x => !x.compatible))){
         console.log(prod.product.name, "is not comapatible with", product)
-        incompatibleProducts.push(prod)
+        console.log(result)
+        // incompatibleProducts.push(prod)
       }
     });
     const incompatible = incompatibleProducts.length > 0

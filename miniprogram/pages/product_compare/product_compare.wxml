@@ -41,9 +41,14 @@
   <view class="results-container">
           <view class="results" wx:for="{{results}}" wx:key="index" product="{{item}}">
             <view style="width: 100%; display: flex; justify-content:center; margin-bottom: 30rpx;"><image class="warning-icon" src="../../images/warning.png"></image></view>
-            <view class="product-info">{{item.gr1}} and {{item.gr2}} are not compatible.</view> 
-            <view class="reason">{{item.reason}}</view>
-            <view class="line">⊛⊛⊛⊛⊛</view>
+            <block wx:if="{{item.title}}">
+              <view class="product-info">{{activeProducts[0].name}} and {{activeProducts[1].name}} are compatible.</view>
+            </block>
+            <block wx:else>
+              <view class="product-info">{{item.gr1}} and {{item.gr2}} are not compatible.</view> 
+              <view class="reason">{{item.reason}}</view>
+              <view class="line">⊛⊛⊛⊛⊛</view>   
+            </block> 
           </view>
       </view>
 
