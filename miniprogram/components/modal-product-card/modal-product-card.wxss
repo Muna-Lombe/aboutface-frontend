@@ -23,3 +23,11 @@
 .product-name {
   padding: 10rpx;
 }
+
+.add {
+  margin-right: 5rpx;
+}
+
+.brand-name:hover{
+  opacity: .7;
+}

@@ -63,6 +63,7 @@
   left: 0;
   right: 0;
   vertical-align: middle;
+  border-radius: 20rpx;
 }
 
 .modal-mask {
