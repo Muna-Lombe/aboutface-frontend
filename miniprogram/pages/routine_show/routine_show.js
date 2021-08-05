@@ -45,12 +45,12 @@ Page({
         }
       })
   },  
-  // deleteModal: function() {
-  //   this.setData({
-  //     seeModal: true,
-  //   })
+  deleteModal: function() {
+    this.setData({
+      seeModal: true,
+    })
     
-  //  },
+   },
   deleteData: function(e) {
     console.log(e)
     // console.log(id)

@@ -1,6 +1,7 @@
 <!--components/modal-product-card/modal-product-card.wxml-->
 <view class="modal-product-container" id="{{product.id}}">
   <view class="brand-name">
+    <view class="add">+</view>
     <view class="product-brand">{{product.brand}}</view>
     <view class="product-name">{{product.name}}</view>
   </view>

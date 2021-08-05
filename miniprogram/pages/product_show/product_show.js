@@ -90,7 +90,7 @@ Page({
       if (result.then(res => res.some(x => !x.compatible))){
         console.log(prod.product.name, "is not comapatible with", product)
         console.log(result)
-        // incompatibleProducts.push(prod)
+        incompatibleProducts.push(prod)
       }
     });
     const incompatible = incompatibleProducts.length > 0
@@ -101,6 +101,9 @@ Page({
     if (!incompatible) {
       this.addToRoutine()
     }
+  },
+  closeModal:function(){
+    this.setData({incompatible: false})
   },
   addToRoutine() {
     const routineId = this.data.chosenRoutine

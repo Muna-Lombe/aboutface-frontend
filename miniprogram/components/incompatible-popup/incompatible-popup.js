@@ -12,6 +12,9 @@ Component({
     },
     continue() {
       this.triggerEvent('addtoroutine')
+    },
+    close:function(){
+      this.triggerEvent('close')
     }
   }
 })

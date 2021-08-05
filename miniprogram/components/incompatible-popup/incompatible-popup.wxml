@@ -1,12 +1,13 @@
 <view class="overlay">
+  <view class="exit" bindtap="close">X</view>
   <view class="popup">
-    WARNING, THIS PRODUCT IS INCOMPATIBLE WITH:
+    <view class="center"><image class="warning-icon" src="../../images/warning.png"></image>WARNING, THIS PRODUCT IS INCOMPATIBLE WITH:</view>
    <view wx:for="{{products}}" wx:key="index">
     •{{item.product.name}}
    </view> 
 
    <view>
-    <button bindtap="continue">Continue?</button>
+    <button class="continue-btn" bindtap="continue">Continue?</button>
    </view>
   </view>
 </view>

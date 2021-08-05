@@ -141,7 +141,7 @@
 
 .modal-dialog {
   width: 540rpx;
-  height: 300rpx;
+  height: 450rpx;
   position: absolute;
   overflow: hidden;
   z-index: 5;
@@ -151,7 +151,8 @@
   margin-left: auto;
   margin-right: auto;
   top: -50VH;
-  left: -375rpx;
+  left: -400rpx;
+  border-radius: 20rpx;
 }
 
 .modal-mask {
@@ -183,12 +184,47 @@
 
 .confirm-cancel {
   position: absolute;
-  bottom: 10rpx;
+  bottom: 20rpx;
   right: 10rpx;
 }
 
-.list:hover {
+.list {
+  margin-top: 30rpx;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 23rpx;
+}
+
+.dot {
+  margin-right: 30rpx;
+}
+
+.center {
+  width: 80%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.routine-name {
+  margin-top: 20rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80rpx;
+  width: 160rpx;
+  background-image: linear-gradient(-60deg, #444, rgb(92, 92, 92));
+  border-radius: 10rpx;
+  color: #fbfbfb;
+}
+
+.routine-name:hover {
   opacity: .7;
+}
+
+.list:hover {
+  color: grey;
 }
 
 .w60 {
