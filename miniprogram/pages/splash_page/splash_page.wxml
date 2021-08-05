@@ -4,7 +4,7 @@
   <image class="img" src="../../images/designfront.png"></image>
   <image class="logo" src="../../images/aboutfacelogo.png"></image>
   <view class="dashed-border" style="position: absolute; left: 268rpx; top: 1291rpx"></view>
-  <view class="login-btn" bindtap="getuserProfile"><image class="wechat-icon" src="../../images/wechaticon.png"></image>Start</view>
+  <button class="login-btn" bindtap="getuserProfile"><image class="wechat-icon" src="../../images/wechaticon.png"></image>Start</button>
 </view>
 
 </body>
