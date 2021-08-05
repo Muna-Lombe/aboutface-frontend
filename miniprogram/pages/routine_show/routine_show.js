@@ -71,7 +71,11 @@ Page({
         }
       })
   },
-
+  goToRoutines() {
+    wx.switchTab({
+      url: '/pages/routine_index/routine_index',
+    })
+  },
   actionOnProduct: function(e) {
     const page = this
     const command = app.globalData.command
