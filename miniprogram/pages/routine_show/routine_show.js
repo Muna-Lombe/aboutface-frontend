@@ -16,34 +16,41 @@ Page({
       showModal: true,
     })
   },
-
+  catchInput:function(e){
+    // console.log(e.detail.value)
+    this.setData({
+      toGet: e.detail.value
+    })
+  },
   confirmEdit: function(e) {
-    console.log(e)
-    const data = e.detail.value
-    console.log("data-id",this.data)
-    // const setId = options.id 
-    // console.log(setId)
-    // const url = app.globalData.url
+    // console.log(e)
+    const data = {name: this.data.toGet}
+    console.log("data", data)
+    const routineID = this.data.routine.id
+    // console.log(routineID)
+    const url = app.globalData.url
+    const headers = app.globalData.headers
     // console.log(url)
-  //   wx.request({
-  //     url: `${url}/api/v1/routines/${id}`,
-  //     method: "PUT",
-  //     data: data,
-  //     success(res) {
-  //       // console.log("success")
-  //       // console.log(res.data)
-  //       wx.navigateBack({
-  //         delta: 1,
-  //       })
-  //     }
-  //   })
-  // },  
+       wx.request({
+        url: `${url}/api/v1/routines/${routineID}`,
+        method: "PUT",
+        data: data,
+        header: headers,
+        success(res) {
+          console.log("success")
+          console.log(res.data)
+            wx.navigateBack({
+               delta: 1,
+            })
+        }
+      })
+  },  
   // deleteModal: function() {
   //   this.setData({
   //     seeModal: true,
   //   })
     
-   },
+  //  },
   deleteData: function(e) {
     console.log(e)
     const url = app.globalData.url
