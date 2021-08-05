@@ -178,7 +178,8 @@ Page({
   /**
    * Lifecycle function--Called when page show
    */
-  onShow: function () {
+  onShow: function (options) {
+    // this.onLoad()
     this.hideModal()
   },
 

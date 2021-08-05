@@ -70,7 +70,8 @@ Page({
         const routines = res.data.routines
         console.log(routines)
         page.setData({
-          routines: routines
+          routines: routines,
+          userProfile: app.globalData.userProfile 
         })
       }
     })

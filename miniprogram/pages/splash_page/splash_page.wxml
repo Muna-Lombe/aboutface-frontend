@@ -3,6 +3,7 @@
 <view class="splash-container">
   <image class="img" src="../../images/designfront.png"></image>
   <image class="logo" src="../../images/aboutfacelogo.png"></image>
+  <view bindtap="getuserProfile">login</view>
 </view>
 
 </body>

@@ -12,14 +12,38 @@ Page({
   /**
    * Lifecycle function--Called when page load
    */
+  getuserProfile: function(e) {
+    wx.getUserProfile({
+      desc:'Get User Profile',
+      success: (res) => {
+        // console.log(res);
+        const userdata = res.userInfo;
+        // console.log(userdata)
+        getApp().globalData.userProfile = userdata;
+        wx.switchTab({
+            url: '../product_index/product_index',
+        })
+      },
+    })
+  },
+
   onLoad: function (options) {
+    wx.getUserProfile({
+      desc:'Get User Profile',
+      success: (res) => {
+        // console.log(res);
+        const userdata = res.userInfo;
+        // console.log(userdata)
+        getApp().globalData.userProfile = userdata;
+      },
+    })
     // setTimeout(() => {
     //     wx.showLoading({
     //       title: 'Logging In',
     //       mask: true
     //     })
     // }, 3000);
-    
+   
   },
 
   /**

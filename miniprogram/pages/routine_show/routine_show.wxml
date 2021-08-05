@@ -61,12 +61,13 @@
   <view class="product-container">
     
     <!-- <routine_product wx:for={{}}></routine_product> -->
-    <routine_product wx:for="{{routine.routine_products}}" wx:key="index" routine_product="{{item}}" id = "{{item.id}}" bindtap="goToProduct"></routine_product>
+    <routine_product wx:for="{{routine.routine_products}}" wx:key="index" routine_product="{{item}}"  bind:onTap = "actionOnProduct" data-item = "{{item}}" data-routineProductId = "{{item.id}}" data-productId = "{{item.product.id}}">
+    </routine_product>
 
   </view>
 
-  <navigator class="add-product" url="../product_index/product_index">
+  <navigator  url="../product_index/product_index" class="add-product">
     <image class="add-icon" src="../../images/addiconpink.png"></image>
   </navigator>
 
-  </body>
+</body>

@@ -2,7 +2,7 @@
 
 <view class="product-box">
   <view class="product-info">
-    <view class="img-name">
+    <view class="img-name" bindtap="goToProduct" data-command = "showProduct">
       <view class="product-box-img">
         <image class="img" src="{{routine_product.product.photo_url}}"></image>
       </view>
@@ -13,7 +13,7 @@
     </view>
 
     <view class="delete-box">
-      <view class="delete-icon" bindtap="onDelete"></view>
+      <view class="delete-icon" bindtap="onDelete" data-command="deleteProduct"></view>
     </view>
 
   </view>

@@ -23,9 +23,9 @@ App({
             that.globalData.userInfo = res.data.user
             that.globalData.headers = res.data.headers
             setTimeout(() => {
-              wx.switchTab({
-                url: '../product_index/product_index',
-              })
+              // wx.switchTab({
+              //   url: '../product_index/product_index',
+              // })
             }, 1500);
             
           }
