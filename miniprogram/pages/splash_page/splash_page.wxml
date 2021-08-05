@@ -1,9 +1,10 @@
 <!--pages/splash_page/splash_page.wxml-->
 <body>
-<view class="splash-container">
+<view class="splash-container" style="position: relative; left: -2rpx; top: 0rpx">
   <image class="img" src="../../images/designfront.png"></image>
   <image class="logo" src="../../images/aboutfacelogo.png"></image>
-  <view bindtap="getuserProfile">login</view>
+  <view class="dashed-border" style="position: absolute; left: 268rpx; top: 1291rpx"></view>
+  <view class="login-btn" bindtap="getuserProfile"><image class="wechat-icon" src="../../images/wechaticon.png"></image>Start</view>
 </view>
 
 </body>
