@@ -83,7 +83,7 @@
 
 .ingredients-container {
   width: 100%;
-  height: 100%;
+  height: 700rpx;
   display: flex;
   margin-top: 30rpx;
   position: relative;
@@ -93,24 +93,28 @@
 .side {
   width: 5%;
   background-color: #EDDD98;
-  padding-bottom: 50rpx;
+  padding-bottom: 200rpx;
 }
 
 .info-container {
-  width: 50%;
+  overflow-y: auto;
+  background-color: #444;
+  width: 100%;
   color: #fbfbfb;
   padding: 30rpx;
-  padding-bottom: 50rpx;
+  padding-bottom: 75rpx;
 }
 
 .h2 {
   font-weight: bold;
-  margin-bottom: 30rpx;
-  font-size: 30rpx;
+  font-size: 32rpx;
+  width: 100%;
+  padding: 30rpx 0rpx;
+  background-color: #444;
 }
 
 .ingredients {
-  font-size: 25rpx;
+  font-size: 28rpx;
   font-weight: 200;
 }
 
@@ -181,4 +185,12 @@
   position: absolute;
   bottom: 10rpx;
   right: 10rpx;
+}
+
+.list:hover {
+  opacity: .7;
+}
+
+.w60 {
+  width: 60%;
 }

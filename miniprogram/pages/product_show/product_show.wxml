@@ -24,8 +24,10 @@
       <view class="side"></view>
       <view class="info-container">
         <view class="h2">Ingredients:</view>
-          <view wx:for="{{ingredients}}" wx:for-item="ingredient" wx:key="index">
-            <view class="ingredients"> • {{ingredient.ingredient.name}}</view>
+          <view class="w60">
+            <view wx:for="{{ingredients}}" wx:for-item="ingredient" wx:key="index">
+              <view class="ingredients"> • {{ingredient.ingredient.name}}</view>
+            </view>
           </view>
       </view>
     </view>
@@ -44,7 +46,9 @@
         <view wx-if='{{showModal}}' class='modal-dialog'>
         <view class="modal-container">
           <view class="modal-text">Pick a routine to add to:</view>
-            <view wx:for="{{routines}}" wx:key="index" id="{{item.id}}"  bindtap="onAdd" data-product = "{{product}}" data-routine = "{{item}}" > • {{item.name}}</view>
+            <view class="list">
+              <view wx:for="{{routines}}" wx:key="index" id="{{item.id}}"  bindtap="onAdd" data-product = "{{product}}" data-routine = "{{item}}" > • {{item.name}}</view>
+            </view>
           <view class="confirm-cancel">
             <view class="d-flex">
               <cancel-btn bindtap="hideModal"></cancel-btn>
