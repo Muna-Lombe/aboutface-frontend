@@ -36,9 +36,8 @@
     </view>
 
     <button class="compare-btn" bindtap="compare">Compare</button>
-  </view>
 
-  <view class="results-container">
+    <view class="results-container">
           <view class="results" wx:for="{{results}}" wx:key="index" product="{{item}}">
             <view style="width: 100%; display: flex; justify-content:center; margin-bottom: 30rpx;"><image class="warning-icon" src="../../images/warning.png"></image></view>
             <block wx:if="{{item.title}}">
@@ -51,6 +50,9 @@
             </block> 
           </view>
       </view>
+
+
+  </view>
 
 
 </body>

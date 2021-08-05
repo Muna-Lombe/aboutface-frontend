@@ -10,10 +10,12 @@
 .swish {
   width: 108%;
   height: 300rpx;
+  overflow: hidden;
 }
 
-.profile-img {
+.border-radius {
   position: absolute;
+  overflow: hidden;
   left: 278rpx; 
   top: 198rpx;
   height: 199rpx;

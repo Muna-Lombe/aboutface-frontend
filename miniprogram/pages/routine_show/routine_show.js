@@ -73,10 +73,12 @@ Page({
   },
 
   actionOnProduct: function(e) {
+    const page = this
     const command = app.globalData.command
     // const id = e.currentTarget.id
     const routineProductId = e.currentTarget.dataset.routineproductid
     const productId = e.currentTarget.dataset.productid
+    const index = e.currentTarget.dataset.index
     console.log("page side",e)
     // console.log("page side global command",command, "routine_id",setId)
     if (command == "deleteProduct"){
@@ -86,6 +88,9 @@ Page({
       const headers = app.globalData.headers
       const getId = setId
       console.log(setId)
+      wx.showLoading({
+        title: 'Loading',
+      })
       wx.request({
         url: `${url}/api/v1/routines/${getId}/routine_products/${routineProductId}`,
         method: 'DELETE',
@@ -93,9 +98,13 @@ Page({
         success(res) {
           console.log("success")
           console.log(res.data)
-          wx.navigateBack({
-            delta: 0,
-          })
+          const routine = page.data.routine
+          routine.routine_products.splice(index, 1)
+          page.setData({routine})
+          wx.hideLoading()
+          // wx.navigateBack({
+          //   delta: 0,
+          // })
         }
       })
     }else if(command == "showProduct"){

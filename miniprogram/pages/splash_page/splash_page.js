@@ -28,21 +28,24 @@ Page({
   },
 
   onLoad: function (options) {
-    wx.getUserProfile({
-      desc:'Get User Profile',
-      success: (res) => {
-        // console.log(res);
-        const userdata = res.userInfo;
-        // console.log(userdata)
-        getApp().globalData.userProfile = userdata;
-      },
-    })
-    // setTimeout(() => {
-    //     wx.showLoading({
-    //       title: 'Logging In',
-    //       mask: true
-    //     })
-    // }, 3000);
+    // wx.getUserProfile({
+    //   desc:'Get User Profile',
+    //   success: (res) => {
+    //     // console.log(res);
+    //     const userdata = res.userInfo;
+    //     // console.log(userdata)
+    //     getApp().globalData.userProfile = userdata;
+    //   },
+    // })
+    setTimeout(() => {
+        // wx.showLoading({
+        //   title: 'Logging In',
+        //   mask: true
+        // })
+        wx.switchTab({
+          url: '/pages/product_index/product_index',
+        })
+    }, 2000);
    
   },
 

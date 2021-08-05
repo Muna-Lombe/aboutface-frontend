@@ -125,13 +125,12 @@
 
 .results-container {
   color: #444;
-  width: 100%;
+  width: 91%;
   height: 90%;
-  padding: 30rpx;
 }
 
 .results {
-  width: 83%;
+  width: 100%;
   border: 2px dashed #E7E7E7;
   background-color: #fbfbfb;
   margin-top: 30rpx;
