@@ -15,15 +15,42 @@ Page({
     this.setData({
       showModal: true,
     })
-    
   },
-
-  deleteModal: function() {
+  catchInput:function(e){
+    // console.log(e.detail.value)
     this.setData({
-      seeModal: true,
+      toGet: e.detail.value
     })
-    
   },
+  confirmEdit: function(e) {
+    // console.log(e)
+    const data = {name: this.data.toGet}
+    console.log("data", data)
+    const routineID = this.data.routine.id
+    // console.log(routineID)
+    const url = app.globalData.url
+    const headers = app.globalData.headers
+    // console.log(url)
+       wx.request({
+        url: `${url}/api/v1/routines/${routineID}`,
+        method: "PUT",
+        data: data,
+        header: headers,
+        success(res) {
+          console.log("success")
+          console.log(res.data)
+            wx.navigateBack({
+               delta: 1,
+            })
+        }
+      })
+  },  
+  // deleteModal: function() {
+  //   this.setData({
+  //     seeModal: true,
+  //   })
+    
+  //  },
   deleteData: function(e) {
     console.log(e)
     // console.log(id)
