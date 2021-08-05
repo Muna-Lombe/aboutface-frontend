@@ -7,6 +7,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 .img {
@@ -16,10 +17,36 @@
 
 .logo {
   width: 260rpx;
-  height: 166rpx;
+  height: 139rpx;
 }
 
 .slogan {
   margin-top: 20rpx;
   text-align: center;
+}
+
+.login-btn {
+  margin-top: 100rpx;
+  padding: 16rpx 38rpx;
+  border-radius: 10rpx;
+  background-image: linear-gradient(-150deg, #e4d390, #e7e1c5);
+  color: #444;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dashed-border {
+  position: absolute;
+  height: 77rpx;
+  width: 214rpx;
+  border-radius: 10rpx;
+  opacity: .3;
+  border: 1px dashed #444;
+}
+
+.wechat-icon {
+  height: 33rpx;
+  width: 40rpx;
+  margin-right: 10rpx;
 }
