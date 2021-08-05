@@ -6,11 +6,11 @@
 
   <view class="profile-background">
     <image class="swish" src="../../images/swish.png"></image>
-    <image class="profile-img" mode="aspectFill" src="https://images.pexels.com/photos/8159669/pexels-photo-8159669.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"></image>
+    <image class="profile-img" mode="aspectFill" src="{{userProfile.avatarUrl}}"></image>
     <view class="dashed-border"></view>
   </view>
 
-  <view class="user-name">Mike Rotch</view>
+  <view class="user-name">{{userProfile.nickName}}</view>
 
   <view class="routine-container">
     <routine wx:for="{{routines}}" wx:key="index" routine="{{item}}" id = "{{item.id}}" bindtap="goToShow"></routine>

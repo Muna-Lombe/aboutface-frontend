@@ -45,6 +45,42 @@ Page({
       })
   },
 
+  actionOnProduct: function(e) {
+    const command = app.globalData.command
+    // const id = e.currentTarget.id
+    const routineProductId = e.currentTarget.dataset.routineproductid
+    const productId = e.currentTarget.dataset.productid
+    console.log("page side",e)
+    // console.log("page side global command",command, "routine_id",setId)
+    if (command == "deleteProduct"){
+      console.log("deleting product", routineProductId)
+
+      const url = app.globalData.url
+      const headers = app.globalData.headers
+      const getId = setId
+      console.log(setId)
+      wx.request({
+        url: `${url}/api/v1/routines/${getId}/routine_products/${routineProductId}`,
+        method: 'DELETE',
+        header: headers,
+        success(res) {
+          console.log("success")
+          console.log(res.data)
+          wx.navigateBack({
+            delta: 0,
+          })
+        }
+      })
+    }else if(command == "showProduct"){
+      console.log("showing product", productId)
+      wx.navigateTo({
+        url: `../product_show/product_show?id=${productId}`,
+      })
+    }else{
+      console.log("command not set")
+    }
+  },
+
     hideModal: function() {
       this.setData({
         showModal: false,
