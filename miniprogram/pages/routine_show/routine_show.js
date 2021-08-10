@@ -52,6 +52,7 @@ Page({
     
    },
   deleteData: function(e) {
+    const page = this
     console.log(e)
     // console.log(id)
     const url = app.globalData.url
@@ -65,9 +66,7 @@ Page({
         success(res) {
           console.log("success")
           console.log(res.data)
-          wx.navigateBack({
-            delta: 0,
-          })
+          page.goToRoutines()
         }
       })
   },

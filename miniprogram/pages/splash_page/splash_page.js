@@ -1,4 +1,5 @@
 // pages/splash_page/splash_page.js
+let app = getApp()
 
 Page({
 
@@ -27,26 +28,38 @@ Page({
     })
   },
 
+  getProducts: function(){
+      const url = app.globalData.url
+      const headers = app.globalData.headers
+      wx.showLoading({})
+      
+      wx.request({
+        url: `${url}/api/v1/products`,
+        // header: headers,
+        success(res){
+          wx.hideLoading({})
+          const products = res.data.products
+          console.log('product index res',res)
+          function compare(a, b) {
+            if (a.name > b.name) return 1;
+            if (b.name > a.name) return -1;
+            return 0;
+          }
+          const sortedProducts = products.sort(compare)
+          app.globalData.products = sortedProducts
+          wx.switchTab({
+            url: '/pages/product_index/product_index',
+          })
+        }
+      })
+  },
+
   onLoad: function (options) {
-    // wx.getUserProfile({
-    //   desc:'Get User Profile',
-    //   success: (res) => {
-    //     // console.log(res);
-    //     const userdata = res.userInfo;
-    //     // console.log(userdata)
-    //     getApp().globalData.userProfile = userdata;
-    //   },
-    // })
-    setTimeout(() => {
-        // wx.showLoading({
-        //   title: 'Logging In',
-        //   mask: true
-        // })
-        wx.switchTab({
-          url: '/pages/product_index/product_index',
-        })
-    }, 2000);
-   
+      // wx.showLoading({})
+      this.getProducts()
+      // setTimeout(() => {
+      //   this.getProucts
+      // }, 10000);
   },
 
   /**
