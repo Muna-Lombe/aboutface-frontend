@@ -2,9 +2,9 @@
 <body>
   <view class="navbar">
     <view class="flex-nav">
-      <navigator open-type="navigateBack">
+      <view bindtap="goToRoutines">
         <image class="arrow" src="../../images/arrowbackicon.png"></image>
-      </navigator>
+      </view>
     </view>
   </view>
 

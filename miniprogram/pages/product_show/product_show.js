@@ -9,13 +9,14 @@ Page({
     showModal: false,
     incompatibleProducts: [],
     chosenRoutine: null,
+    routines:null,
     incompatible: false
   },
 
   routineModal: function() {
     const routines = app.globalData.routines
     this.setData({
-      routines,
+      routines: routines,
       showModal: true,
     })
   },
@@ -185,6 +186,7 @@ Page({
   onShow: function (options) {
     // this.onLoad()
     this.hideModal()
+    this.setData({routines:null})
   },
 
   /**

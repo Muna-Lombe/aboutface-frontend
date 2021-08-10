@@ -12,8 +12,8 @@ App({
     wx.login({
       success: res => {
         console.log(res)
-        const durl = "https://aboutface.wogengapp.cn"
-        const lurl = "http://localhost:3000"
+        const lurl = "https://aboutface.wogengapp.cn"
+        const durl = "http://localhost:3000"
         wx.request({
           url: `${durl}/api/v1/login`,
           method: 'POST',
@@ -22,11 +22,8 @@ App({
             console.log("login res",res)
             that.globalData.userInfo = res.data.user
             that.globalData.headers = res.data.headers
-            setTimeout(() => {
-              // wx.switchTab({
-              //   url: '../product_index/product_index',
-              // })
-            }, 1500);
+            //setTimeout(() => {
+            //}, 1500);
             
           }
         })
@@ -55,8 +52,8 @@ App({
     // })
   },
   globalData: {
-    url:"https://aboutface.wogengapp.cn",
-    // url:"http://localhost:3000",
+    // url:"https://aboutface.wogengapp.cn",
+    url:"http://localhost:3000",
     userProfile:"",
     userInfo:"",
     headers:"",

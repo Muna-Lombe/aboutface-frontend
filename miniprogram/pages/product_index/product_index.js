@@ -81,8 +81,15 @@ Page({
         success(res){
           const products = res.data.products
           console.log(res)
+          function compare(a, b) {
+                  if (a.name > b.name) return 1;
+                  if (b.name > a.name) return -1;
+                
+                  return 0;
+          }
+          const sortedProducts = products.sort(compare)
           page.setData({
-            products: products
+            products: sortedProducts
           })
           wx.hideLoading()
         }
@@ -92,25 +99,34 @@ Page({
   /**
    * Lifecycle function--Called when page load
    */
+  
   onLoad: function (options) {
-      const page = this
-      const url = app.globalData.url
-      const headers = app.globalData.headers
-      wx.showLoading({})
-      wx.request({
-        url: `${url}/api/v1/products`,
-        header: headers,
-        success(res){
-          wx.hideLoading({})
-          const products = res.data.products
-          console.log('product index res',res)
-        
-          page.setData({
-            products: products,
+
+        const pr = app.globalData.products
+      // const page = this
+      // const url = app.globalData.url
+      // const headers = app.globalData.headers
+      // wx.showLoading({})
+      // wx.request({
+      //   url: `${url}/api/v1/products`,
+      //   header: headers,
+      //   success(res){
+      //     wx.hideLoading({})
+      //     const products = res.data.products
+      //     console.log('product index res',res)
+      //     function compare(a, b) {
+      //       if (a.name > b.name) return 1;
+      //       if (b.name > a.name) return -1;
+          
+      //       return 0;
+      //     }
+      //     const sortedProducts = products.sort(compare)
+          this.setData({
+            products: pr,
             isDisabled: true
           })
-        }
-      })
+      //   }
+      // })
   },
 
   /**
