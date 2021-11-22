@@ -206,6 +206,15 @@
   white-space: nowrap;
   text-align: center;
 }
+.no-routines{
+  display: flex; 
+  flex-direction: column;
+  justify-content: space-around; 
+  align-items: center;
+  width:100%;
+  font:bold 65rpx 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
 
 .routine-name {
   margin-top: 20rpx;

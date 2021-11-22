@@ -12,13 +12,14 @@ App({
     wx.login({
       success: res => {
         console.log(res)
-        const lurl = "https://aboutface.wogengapp.cn"
-        const durl = "http://localhost:3000"
+        const durl = "http://121.42.242.133"
+        const lurl = "http://localhost:3000"
         wx.request({
-          url: `${durl}/api/v1/login`,
+          url: `${lurl}/api/v1/login`,
           method: 'POST',
           data:{code:res.code},
           success(res){
+            that.globalData.loginres = 1
             console.log("login res",res)
             that.globalData.userInfo = res.data.user
             that.globalData.headers = res.data.headers
@@ -52,13 +53,15 @@ App({
     // })
   },
   globalData: {
-    // url:"https://aboutface.wogengapp.cn",
+    // url:"http://121.42.242.133",
     url:"http://localhost:3000",
     userProfile:"",
     userInfo:"",
     headers:"",
     language: "EN",
-    products: ""
-    // wx.getStorageSync('products')
-  }
+    products: "",
+    loginres: 0,
+    products: wx.getStorageSync('products')
+  },
+  
 })

@@ -1,6 +1,6 @@
 <!--pages/product_show/product_show.wxml-->
 <body>
-  <incompatible-popup bind:close= "closeModal" bind:addtoroutine="addToRoutine" wx:if="{{incompatible}}" products="{{incompatibleProducts}}" />
+  <incompatible-popup bind:close= "closeModal" bind:onclear="onClear" bind:addtoroutine="addToRoutine" wx:if="{{incompatible}}" products="{{incompatibleProducts}}" />
   <view class="navbar">
     <view class="flex-nav">
       <navigator open-type="navigateBack">
@@ -45,12 +45,23 @@
         <view wx-if='{{showModal}}' class='modal-mask' bindtap='hideModal' catchtouchmove='preventTouchMove'></view>
         <view wx-if='{{showModal}}' class='modal-dialog'>
         <view class="modal-container">
-          <view class="modal-text">Pick a routine to add to:</view>
+          <view wx:if="{{routines.length > 0}}">
+            <view class="modal-text">Pick a routine to add to:</view>
             <view class="list">
+            
               <view class="routine-name" wx:for="{{routines}}" wx:key="index" id="{{item.id}}"  bindtap="onAdd" data-product = "{{product}}" data-routine = "{{item}}">
                 <view class="center">{{item.name}}</view>
               </view>
             </view>
+          </view>
+          <view wx:else>
+            <view class="no-routines">No routines, <view bindtap="addNew" style="text-decoration: underline; text-decoration-style: solid;color: #EDDD98;">add new routine?</view> </view>
+          </view>
+            
+              <!-- <view class="routine-name" wx:for="{{routines}}" wx:key="index" id="{{item.id}}"  bindtap="onAdd" data-product = "{{product}}" data-routine = "{{item}}">
+                <view class="center">{{item.name}}</view> -->
+              <!-- </view> -->
+            
           <view class="confirm-cancel">
             <view class="d-flex">
               <cancel-btn bindtap="hideModal"></cancel-btn>

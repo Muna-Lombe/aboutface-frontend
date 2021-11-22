@@ -37,6 +37,11 @@ Page({
       url: `../product_compare/product_compare`,
     })
   },
+  addNew:function(){
+    wx.switchTab({
+      url: `../routine_index/routine_index`,
+    })
+  },
   async compare(productOne, productTwo){
     // /api/v1/products/compare?compare="
     // console.log("products",)
@@ -66,6 +71,14 @@ Page({
       })
     })
     
+  },
+  onClear:function(){
+    this.setData({
+      incompatibleProducts: [],
+      chosenRoutine: null,
+      incompatible: false,
+      chosenProduct:null
+    })
   },
   async onAdd(e){
     const routine = e.currentTarget.dataset.routine

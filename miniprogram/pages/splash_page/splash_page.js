@@ -27,15 +27,18 @@ Page({
       },
     })
   },
-
+  
   getProducts: function(){
+    
+
+      // while (getApp().globalData.loginres == 0) {
+      //   console.log("waiting for login")
+      // }
       const url = app.globalData.url
-      const headers = app.globalData.headers
-      wx.showLoading({})
-      
+      const headers = app.globalData.headers;
       wx.request({
         url: `${url}/api/v1/products`,
-        // header: headers,
+        header: headers,
         success(res){
           wx.hideLoading({})
           const products = res.data.products
@@ -56,10 +59,11 @@ Page({
 
   onLoad: function (options) {
       // wx.showLoading({})
-      this.getProducts()
-      // setTimeout(() => {
-      //   this.getProucts
-      // }, 10000);
+      // this.getProducts()
+      const that = this
+      setTimeout(() => {
+        that.getProducts()
+      }, 5000);
   },
 
   /**

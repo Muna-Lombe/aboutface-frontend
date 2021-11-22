@@ -1,13 +1,18 @@
 <view class="overlay">
-  <view class="exit" bindtap="close">X</view>
-  <view class="popup">
-    <view class="center"><image class="warning-icon" src="../../images/warning.png"></image>WARNING, THIS PRODUCT IS INCOMPATIBLE WITH:</view>
-   <view wx:for="{{products}}" wx:key="index">
-    •{{item.product.name}}
-   </view> 
+  <view class="popup"> 
+    <view class="exit-border">
+      <view class="exit" bindtap="close">X</view>
+    </view>
+    <view class="inner-container">
+      <view class="center"><image class="warning-icon" src="../../images/warning.png"></image>WARNING, THIS PRODUCT IS INCOMPATIBLE WITH:</view>
+      <view wx:for="{{products}}" wx:key="index">
+        •{{item.product.name}}
+      </view> 
 
-   <view>
-    <button class="continue-btn" bindtap="continue">Continue?</button>
-   </view>
+      <view>
+        <button class="continue-btn" bindtap="continue">Continue?</button>
+      </view>
+    </view>
+   
   </view>
 </view>

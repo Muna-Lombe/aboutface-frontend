@@ -1,3 +1,5 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "incompatible-popup": "../../components/search_bar/search_bar"
+  }
 }

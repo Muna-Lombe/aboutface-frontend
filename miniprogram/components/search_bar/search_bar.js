@@ -25,9 +25,6 @@ Component({
       var myEventDetail = e.detail // detail object, provided to the event monitoring function
       var myEventOption = e.options // Event triggering options
       this.triggerEvent('search', myEventDetail, myEventOption)
-      this.setData({
-        searchValue: ""
-      })
     },
     clearSearch:function(){
       this.setData({

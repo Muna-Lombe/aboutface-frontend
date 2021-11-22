@@ -8,13 +8,18 @@
 }
 
 .popup {
+  display: flex;
+  flex-direction: column;
   background: #FFF;
   padding: 40rpx;
   position: relative;
   width: 80%;
   border-radius: 20rpx;
+  padding:10rpx 10rpx 10rpx 10rpx;
 }
-
+.inner-container{
+  padding:17rpx 17rpx 17rpx 17rpx; 
+}
 .continue-btn {
   background-color: #EDDD98;
   color: #444;
@@ -23,8 +28,9 @@
 }
 
 .warning-icon {
-  height: 35rpx;
+  height: 34rpx;
   width: 50rpx;
+  
 }
 
 .center {
@@ -33,12 +39,25 @@
   text-align: center;
   margin-bottom: 30rpx;
 }
-
+.exit-border{
+  display: flex;
+  justify-content: space-between;
+}
 .exit {
-  font-size: 50rpx;
-  top: 400rpx;
-  left: 45rpx;
-  z-index: 10;
-  position: absolute; 
-  color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 40rpx;
+  /* top: 8rpx; */
+  /* left: 9rpx; */
+  z-index: 9;
+  /* position: absolute;  */
+  background-color: #EDDD98;
+  color: #444;
+  width: 37rpx;
+  height: 53rpx;
+  border: 6rpx solid  #ece0ab;
+  border-radius: 15rpx 15rpx 15rpx 15rpx ;
+  margin-bottom: 10rpx;
+
 }

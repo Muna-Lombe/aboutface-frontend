@@ -14,7 +14,9 @@ Component({
       this.triggerEvent('addtoroutine')
     },
     close:function(){
+      this.triggerEvent('onclear')
       this.triggerEvent('close')
+      
     }
   }
 })
