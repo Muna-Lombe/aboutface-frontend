@@ -15,16 +15,21 @@ App({
         const durl = "http://121.42.242.133"
         const lurl = "http://localhost:3000"
         wx.request({
-          url: `${lurl}/api/v1/login`,
+          url: `${durl}/api/v1/login`,
           method: 'POST',
+          header:{},
           data:{code:res.code},
           success(res){
             that.globalData.loginres = 1
             console.log("login res",res)
             that.globalData.userInfo = res.data.user
             that.globalData.headers = res.data.headers
-            //setTimeout(() => {
-            //}, 1500);
+            wx.navigateTo({
+              url: 'pages/splash_page/splash_page',
+              success: (res) => {
+                console.log(res)
+              },
+            })
             
           }
         })
@@ -53,8 +58,8 @@ App({
     // })
   },
   globalData: {
-    // url:"http://121.42.242.133",
-    url:"http://localhost:3000",
+    url:"http://121.42.242.133",
+    // url:"http://localhost:3000",
     userProfile:"",
     userInfo:"",
     headers:"",

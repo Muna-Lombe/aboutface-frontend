@@ -36,6 +36,7 @@ Page({
       // }
       const url = app.globalData.url
       const headers = app.globalData.headers;
+      console.log("headers", headers)
       wx.request({
         url: `${url}/api/v1/products`,
         header: headers,
