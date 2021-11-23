@@ -12,6 +12,7 @@ Page({
     ],
     isDisabled: true,
     class: "hidden",
+    toggleClear:false,
     searchValue: ""
   },
 
@@ -30,7 +31,16 @@ Page({
       }) 
     }
   },
-
+  setClear:function(){
+    this.setData({
+      toggleClear: true
+    })
+  },  
+  unsetClear:function(){
+    this.setData({
+      toggleClear: false
+    })
+  }, 
   goToShow: function(e){
     console.log(e)
     const id = e.currentTarget.id
@@ -38,13 +48,20 @@ Page({
       url: `../product_show/product_show?id=${id}`,
     })
   },
+  SoC:function(e){
+    // console.log(e)
+   const key = this.data.toggleClear
+   key == true ? this.clearSearch() : this.onSearch(e)
+  //  console.log(e)
+  }, 
   onSearch: function(e){
-    console.log("search event res:", e)
-    const searchInput = e.detail.value
+    // console.log("search event res:", e)
+    // const searchInput = e.detail.value
     const url = app.globalData.url
-    const query = e.detail.value.input
+    const query = e.detail.value
+    // const query = document.getElementById('search')
 
-    console.log({query})
+    console.log("value=>",query)
     const headers = app.globalData.headers
     const page = this
     wx.showLoading({
@@ -89,7 +106,8 @@ Page({
           }
           const sortedProducts = products.sort(compare)
           page.setData({
-            products: sortedProducts
+            products: sortedProducts,
+            toggleClear: false
           })
           wx.hideLoading()
         }
