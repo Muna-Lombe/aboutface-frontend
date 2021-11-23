@@ -17,14 +17,12 @@
         <view class="button-container">
         <view wx-if='{{showModal}}' class='modal-mask' bindtap='hideModal' catchtouchmove='preventTouchMove'></view>
         <view wx-if='{{showModal}}' class='modal-dialog'>
-          <form class='page_row' bindsubmit="onSearch">
-            <view class="search">
-              <view class="df search_arr">
-                <input style="width: 492rpx; height: 60rpx; display: block; box-sizing: border-box; left: NaNrpx; top: NaNrpx"  name="input" placeholder="Search for a product" value="{{searchValue}}"/>
+          <view class="search">
+            <view class="df search_arr">
+              <input style="width: 492rpx; height: 60rpx; display: block; box-sizing: border-box; left: NaNrpx; top: NaNrpx"  name="input" bindfocus="setClear" bindconfirm="onSearch" data-input="value"  placeholder="Search for a product" value="{{searchValue}}"/>
               </view>
-              <button class='search-btn' form-type = "submit" ><icon class="searchicon" size='20' type='search'></icon></button>
-            </view>
-          </form>
+             <button class='search-btn' bindtap="SoC" ><icon class="searchicon" size='20' type='{{toggleClear==true ? "clear" : "search" }}'></icon></button>
+          </view>
           <view class="card-container">
             <modal-product-card wx:for="{{products}}" wx:key="index" product="{{item}}" id="{{item.id}}" bindtap = "getID" data-product = "{{item}}"></modal-product-card>
           </view>

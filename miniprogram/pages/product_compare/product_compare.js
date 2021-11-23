@@ -12,6 +12,7 @@ Page({
     searchValue: "",
     showModal: false,
     activeBox: null,
+    toggleClear:false,
     activeProducts: []
   },
 
@@ -21,7 +22,12 @@ Page({
   openModal: function(e) {
     this.setData({
       showModal: true,
-      activeBox: parseInt(e.currentTarget.dataset.box)
+      activeBox: parseInt(e.currentTarget.dataset.box),
+      class: "hidden", 
+      products: "",
+      toggleClear: false, 
+      searchValue: ""
+      
     })
   },
 
@@ -69,14 +75,30 @@ Page({
       }
     })
   },
-
+  setClear:function(){
+    this.setData({
+      toggleClear: true
+    })
+  },  
+  unsetClear:function(){
+    this.setData({
+      toggleClear: false
+    })
+  }, 
+  SoC:function(e){
+    // console.log(e)
+   const key = this.data.toggleClear
+   key == true ? this.clearSearch() : this.onSearch(e)
+  //  console.log(e)
+  }, 
   onSearch: function(e){
-    console.log("search event res:", e)
-    const searchInput = e.detail.value
+    // console.log("search event res:", e)
+    // const searchInput = e.detail.value
     const url = app.globalData.url
-    const query = e.detail.value.input
+    const query = e.detail.value
+    // const query = document.getElementById('search')
 
-    console.log({query})
+    console.log("value=>",query)
     const headers = app.globalData.headers
     const page = this
     wx.showLoading({
@@ -106,19 +128,34 @@ Page({
       const url = app.globalData.url
       const headers = app.globalData.headers
       // const query = options.input
-      this.setData({class: "hidden", searchValue: ""});
-      wx.request({
-        url: `${url}/api/v1/products`,
-        header: headers,
-        success(res){
-          const products = res.data.products
-          console.log(res)
-          page.setData({
-            products: products
-          })
-          wx.hideLoading()
-        }
-      })
+      this.setData({class: "hidden", 
+        products: "",
+        toggleClear: false, 
+        searchValue: ""
+      });
+      wx.hideLoading()
+      // wx.request({
+      //   url: `${url}/api/v1/products`,
+      //   header: headers,
+      //   success(res){
+      //     const products = res.data.products
+      //     console.log(res)
+      //     function compare(a, b) {
+      //             if (a.name > b.name) return 1;
+      //             if (b.name > a.name) return -1;
+                
+      //             return 0;
+      //     }
+      //     const sortedProducts = products.sort(compare)
+      //     page.setData({
+      //       products: sortedProducts,
+      //       searchValue:"",
+      //       toggleClear: false
+      //     })
+      //     wx.hideLoading()
+      //   }
+      // })
+      
     
   },
 
