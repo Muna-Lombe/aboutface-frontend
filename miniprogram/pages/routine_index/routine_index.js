@@ -9,6 +9,12 @@ Page({
    */
   data: {
     showModal: false,
+    avatarUrl: "../../images/usericon.png",
+    loggedIn:false,
+    disabled:null
+    // hidden:true
+
+
   },
 
   openModal: function() {
@@ -30,6 +36,30 @@ Page({
     // console.log(e.detail.value)
     this.setData({
       toGet: e.detail.value
+    })
+  },
+  getuserProfile: function() {
+    const page = this
+    wx.getUserProfile({
+      desc:'Get User Profile',
+      success: (res) => {
+        // console.log(res);
+        const userdata = res.userInfo;
+        console.log(userdata.nickName)
+        console.log(userdata.avatarUrl)
+        app.globalData.userProfile = userdata;
+        app.globalData.userLoggedIn = true;
+        
+        page.setData({
+          username:userdata.nickName,
+          loggedIn: true,
+          avatarUrl: `${userdata.avatarUrl}`,
+          disabled: "openModal"
+        })
+        page.onLoad()
+
+      },
+
     })
   },
   addRoutine:function(e){
@@ -60,21 +90,26 @@ Page({
     })
   },
   onLoad: function (options) {
+    // this.getuserProfile()
     const page = this
     const headers = app.globalData.headers
     console.log("headers:",headers)
-    wx.request({
-      url: `${setUrl}/api/v1/routines`,
-      header: headers,
-      success(res){
-        const routines = res.data.routines
-        console.log(routines)
-        page.setData({
-          routines: routines,
-          userProfile: app.globalData.userProfile 
-        })
-      }
-    })
+    if(app.globalData.userLoggedIn == true){
+      wx.request({
+        url: `${setUrl}/api/v1/routines`,
+        header: headers,
+        success(res){
+          const routines =  res.data.routines
+          console.log(routines)
+          page.setData({
+            routines: routines
+          })
+        }
+      })
+    }else{
+      console.log("No routines fetched!")
+    }
+    
 
   },
 

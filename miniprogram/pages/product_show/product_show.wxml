@@ -48,9 +48,11 @@
           <view wx:if="{{routines.length > 0}}">
             <view class="modal-text">Pick a routine to add to:</view>
             <view class="list">
-            
+              
               <view class="routine-name" wx:for="{{routines}}" wx:key="index" id="{{item.id}}"  bindtap="onAdd" data-product = "{{product}}" data-routine = "{{item}}">
-                <view class="center">{{item.name}}</view>
+                <image class="routine-icon" src="../../images/routineicon.png"></image>
+                <view class="center">
+                  {{item.name}}</view>
               </view>
             </view>
           </view>
