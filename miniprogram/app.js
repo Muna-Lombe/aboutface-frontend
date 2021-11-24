@@ -62,6 +62,7 @@ App({
     // url:"http://localhost:3000",
     userProfile:"",
     userInfo:"",
+    userLoggedIn:false,
     headers:"",
     language: "EN",
     products: "",

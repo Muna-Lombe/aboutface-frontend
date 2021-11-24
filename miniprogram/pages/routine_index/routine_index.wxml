@@ -7,18 +7,29 @@
   <view class="profile-background">
     <image class="swish" src="../../images/swish.png"></image>
     <view class="border-radius">
-      <open-data class="profile-img" mode="aspectFill" type="userAvatarUrl"></open-data> 
+      <!-- <open-data class="profile-img" mode="aspectFill" type="userAvatarUrl"></open-data>  -->
+      <image class="profile-image" src="{{avatarUrl}}" mode="aspectFill" ></image>
     </view>
-    <!-- <image class="profile-img" mode="aspectFill" src="{{userProfile.avatarUrl}}"></image> -->
+
     <view class="dashed-border"></view>
   </view>
 
-  <view class="user-name"><open-data type="userNickName"></open-data></view>
+  <!-- <view class="user-name"><open-data type="userNickName"></open-data></view> -->
+  <view class="user-name">
+    
+    <view wx:if="{{loggedIn == true}}">
+        {{username}}
+    </view>
+    <view wx:else>
+        <view> Please <a bindtap="getuserProfile" style="font-weight: bold; color: rgb(216, 169, 111);">Log in</a> to view your routines </view>
+    </view>
+
+  </view>
 
   <view class="routine-container">
     <routine wx:for="{{routines}}" wx:key="index" routine="{{item}}" id = "{{item.id}}" bindtap="goToShow"></routine>
     <view class="button-padding">
-          <view bindtap="openModal" disabled="{{default}}"><add-new-routine></add-new-routine></view>
+          <view bindtap="{{disabled}}" ><add-new-routine></add-new-routine></view>
         </view>
         <view class="button-container">
         <view wx-if='{{showModal}}' class='modal-mask' bindtap='hideModal' catchtouchmove='preventTouchMove'></view>

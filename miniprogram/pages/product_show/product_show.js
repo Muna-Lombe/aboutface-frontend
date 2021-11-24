@@ -127,6 +127,8 @@ Page({
     const url = app.globalData.url
     const data = {"routine_id": routineId, "product_id": this.data.chosenProduct.id}
     const headers = app.globalData.headers
+    
+
     wx.request({
       url: `${url}/api/v1/routines/${routineId}/routine_products`,
       method: 'POST',
@@ -174,16 +176,21 @@ Page({
 
     // const page = this
     // const headers = app.globalData.headers
-    console.log("headers:",headers)
-    wx.request({
-      url: `${url}/api/v1/routines`,
-      header: headers,
-      success(res){
-        const routines = res.data.routines
-        console.log(routines)
-        app.globalData["routines"] = routines
-      }
-    })
+    if(app.globalData.userLoggedIn == true){
+      console.log("headers:",headers)
+      wx.request({
+        url: `${url}/api/v1/routines`,
+        header: headers,
+        success(res){
+          const routines = res.data.routines
+          console.log(routines)
+          app.globalData["routines"] = routines
+        }
+      }) 
+    }else{
+      console.log("no routines fetched!")
+    }
+    
   },
 
   /**

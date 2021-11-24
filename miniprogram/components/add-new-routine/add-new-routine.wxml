@@ -1,5 +1,5 @@
 <!--components/add-new-routine/add-new-routine.wxml-->
-<view class="routine">
+<view class="routine" >
 
 <view class="center">
 <view class="icon-name">

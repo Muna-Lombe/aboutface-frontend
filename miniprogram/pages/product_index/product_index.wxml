@@ -19,7 +19,7 @@
   <view class="search_bar-container">
   
     <view class='page_row'>
-      <view class="search">
+      <view class="search" >
         <view class="df search_arr">
           <input style="width: 492rpx; height: 60rpx; display: block; box-sizing: border-box; left: NaNrpx; top: NaNrpx"  name="input" bindfocus="setClear" bindconfirm="onSearch" data-input="value"  placeholder="Search for a product" value="{{searchValue}}"/>
         </view>
